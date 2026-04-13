@@ -166,10 +166,8 @@ wine-mono
 winetricks
 linexin-updater
 unzip
-affinity-installer2
 fuse
 libappimage
-davinci-installer
 ffmpeg
 gstreamer
 python-distro
@@ -184,6 +182,7 @@ xf86-video-nouveau
 linexin-desktop-presets
 spice-vdagent
 linexin-center
+linexin-hello
 #kinexin-desktop
 linexin-desktop
 linpama

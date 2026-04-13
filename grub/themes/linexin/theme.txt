@@ -1,0 +1,66 @@
+# Linexin GRUB Theme
+
+# Desktop settings
+desktop-image: "background.png"
+desktop-color: "#1a1a2e"
+title-text: ""
+title-color: "#ffffff"
+message-font: "DejaVu Sans Regular 16"
+message-color: "#cccccc"
+terminal-font: "DejaVu Sans Regular 16"
+
+# Logo (115px fixed size — GRUB image widget does not scale)
++ image {
+    left = 46%
+    top = 2%
+    file = "logo.png"
+}
+
+# Boot menu
++ boot_menu {
+    left = 20%
+    top = 18%
+    width = 60%
+    height = 65%
+    item_font = "DejaVu Sans Regular 24"
+    item_color = "#cccccc"
+    selected_item_font = "DejaVu Sans Bold 28"
+    selected_item_color = "#ffffff"
+    icon_width = 64
+    icon_height = 64
+    item_icon_space = 20
+    item_height = 80
+    item_padding = 8
+    item_spacing = 4
+    selected_item_pixmap_style = "select_*.png"
+    scrollbar = true
+    scrollbar_frame = "scroll_frame_*.png"
+    scrollbar_thumb = "scroll_thumb_*.png"
+    scrollbar_slice = "east"
+    scrollbar_right_pad = 4
+    scrollbar_top_pad = 4
+    scrollbar_bottom_pad = 4
+}
+
+# Countdown label
++ label {
+    left = 35%
+    top = 85%
+    width = 30%
+    align = "center"
+    id = "__timeout__"
+    text = "Booting in %d seconds..."
+    color = "#9033cc"
+    font = "DejaVu Sans Regular 16"
+}
+
+# Help text
++ label {
+    left = 20%
+    top = 90%
+    width = 60%
+    align = "center"
+    color = "#666666"
+    font = "DejaVu Sans Regular 16"
+    text = "Use arrow keys to select, Enter to boot"
+}
