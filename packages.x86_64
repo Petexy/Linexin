@@ -142,6 +142,7 @@ noto-fonts-cjk
 squashfs-tools
 yaml-cpp
 qemu-guest-agent
+linexin-keyring
 nvidia-open
 gnome
 networkmanager
@@ -151,6 +152,8 @@ cargo
 util-linux
 flatpak
 vulkan-radeon
+vulkan-intel
+vulkan-nouveau
 paru
 firefox
 extension-manager
