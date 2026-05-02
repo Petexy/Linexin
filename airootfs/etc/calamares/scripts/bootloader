@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Re-generate initramfs images
-mkinitcpio -P
+mkinitcpio -P || { echo "ERROR: mkinitcpio failed" >&2; exit 1; }
 
 # Create loader configuration
 cat > /boot/loader/loader.conf <<EOF
@@ -11,8 +11,27 @@ console-mode max
 editor   no
 EOF
 
+# Resolve root UUID with fallbacks
+_get_root_uuid() {
+    local uuid device
+
+    uuid=$(findmnt -no UUID /)
+    [ -n "$uuid" ] && echo "$uuid" && return 0
+
+    device=$(findmnt -no SOURCE /)
+    uuid=$(blkid -s UUID -o value "$device" 2>/dev/null)
+    [ -n "$uuid" ] && echo "$uuid" && return 0
+
+    uuid=$(awk '$2 == "/" { print $1 }' /etc/fstab | grep -oP 'UUID=\K\S+')
+    [ -n "$uuid" ] && echo "$uuid" && return 0
+
+    echo "ERROR: could not determine root UUID" >&2
+    return 1
+}
+
+ROOT_UUID=$(_get_root_uuid) || exit 1
+
 # Create boot entry
-ROOT_UUID=$(findmnt -no UUID /)
 cat > /boot/loader/entries/linexin.conf <<EOF
 title    linexin
 linux    /vmlinuz-linux
