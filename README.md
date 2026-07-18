@@ -41,7 +41,10 @@ It depends. Default UI is a modified GNOME Desktop Environment to be more user-f
 Hell nah brother, it's still a non-immutable Arch. It's at most lazy-friendly.
 
 <h2>Can I just compile the package from this GitHub?</h2>
-Absolutely. Using ArchISO tool, you should be able to get the newest build of Linexin ready to go. However, remember that this is a development build. It may not be as stable as the selected version uploaded for [download](https://petexy.github.io/Linexin).
+<p>
+Absolutely. Using ArchISO tool, you should be able to get the newest build of Linexin ready to go. However, remember that this is a development build. It may not be as stable as the selected version uploaded for
+<a href="https://petexy.github.io/Linexin">download</a>.
+</p>
 
 <h2>Does it support [...] language?</h2>
 There are a couple of fully supported languages:
