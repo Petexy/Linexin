@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linexin Changelog — Release Notes for Every Version</title>
+    <meta name="description"
+        content="Full release notes for Linexin: what changed in v2.1, v2.0 and v1.1 — new features, fixes and improvements in every version of the Arch-based distribution.">
+    <link rel="canonical" href="https://petexy.github.io/Linexin/changelog.html">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <meta name="theme-color" content="#0f0518">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Linexin">
+    <meta property="og:title" content="Linexin Changelog — Release Notes for Every Version">
+    <meta property="og:description" content="What changed in each Linexin release.">
+    <meta property="og:url" content="https://petexy.github.io/Linexin/changelog.html">
+    <meta property="og:image" content="https://petexy.github.io/Linexin/assets/img/showcase-1.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <a href="#main" class="skip-link" data-translate-key="skip_link">Skip to content</a>
+
+    <div class="noise-bg" aria-hidden="true"></div>
+    <div class="aurora-wrap" aria-hidden="true">
+        <div class="aurora-blob one"></div>
+        <div class="aurora-blob two"></div>
+    </div>
+
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <div class="nav-content">
+                <a href="index.html" class="nav-brand">
+                    <span class="logo-wrap"><img src="logo.png" alt="Linexin Logo" width="32" height="32" data-translate-key="logo_alt"
+                            data-translate-type="alt"></span>
+                    <span>Linexin</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" data-translate-key="nav_home">Home</a>
+                    <a href="packages.html" data-translate-key="nav_packages">What's Inside</a>
+                    <a href="changelog.html" class="active" data-translate-key="nav_changelog">Changelog</a>
+                    <a href="https://github.com/Petexy/Linexin" target="_blank" rel="noopener noreferrer"
+                        data-translate-key="nav_github">GitHub</a>
+
+                    <div class="nav-sep" aria-hidden="true"></div>
+
+                    <div class="lang-menu">
+                        <button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false"
+                            aria-label="Change language" data-translate-key="aria_change_language" data-translate-attr="aria-label">
+                            <span class="lang-current">EN</span>
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                                </path>
+                            </svg>
+                        </button>
+                        <div class="lang-list" id="lang-list"></div>
+                    </div>
+
+                    <a href="download.html" class="btn btn-primary btn-shimmer nav-cta"
+                        data-translate-key="nav_download">Download</a>
+                </div>
+
+                <button type="button" class="menu-toggle" aria-label="Open menu" data-translate-key="aria_open_menu" data-translate-attr="aria-label" aria-expanded="false">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu glass-panel">
+            <a href="index.html" data-translate-key="nav_home">Home</a>
+            <a href="packages.html" data-translate-key="nav_packages">What's Inside</a>
+            <a href="changelog.html" class="active" data-translate-key="nav_changelog">Changelog</a>
+            <a href="https://github.com/Petexy/Linexin" target="_blank" rel="noopener noreferrer"
+                data-translate-key="nav_github">GitHub</a>
+            <a href="download.html" class="btn btn-primary" data-translate-key="nav_download">Download</a>
+            <div class="mobile-langs" id="mobile-langs"></div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <header class="page-header">
+            <div class="container">
+                <h1 data-translate-key="nav_changelog">Changelog</h1>
+                <p class="lead" data-translate-key="cl_lead">What changed in each Linexin release.</p>
+            </div>
+        </header>
+
+        <section style="padding-top: 24px;">
+            <div class="container">
+
+                <!-- v2.1 -->
+                <article class="release glass-panel reveal" id="v2-1" data-translate-key="cl_v21">
+                    <div class="release-head">
+                        <h2>v2.1</h2>
+                        <span class="chip chip-current" data-translate-key="cl_current">Current</span>
+                        <span class="chip">linexin-2026-v2.1.4-x86_64.iso</span>
+                    </div>
+                    <p class="note">Changes compared to the raw v2.0 ISO.</p>
+                    <ul>
+                        <li>Added <strong>Linexin Hello</strong> — a welcome app that helps you finish setting up after
+                            installation.</li>
+                        <li>Added an <strong>advanced installation option</strong> that enables the user to:
+                            <ul>
+                                <li>select which packages should be installed</li>
+                                <li>select the bootloader manually</li>
+                            </ul>
+                        </li>
+                        <li>Added <strong>Kinexin Deco</strong> — a new, highly customizable window decoration for
+                            Kinexin Desktop.</li>
+                        <li>Updated gtk-4.0 and gtk-3.0 settings to use Kinexin Deco style buttons for a unified UI.
+                        </li>
+                        <li>Linexin Installer now fully supports lower resolutions (e.g. 800×600).</li>
+                        <li>Linexin Installer now prevents the screen from going to sleep, which should eliminate
+                            problems when the user picks the wrong option for the GPU.</li>
+                        <li>The system now uses bash as the default shell.</li>
+                        <li>The Croatia wallpaper is now shown correctly in GNOME Settings.</li>
+                        <li>Linexin Center has been updated to use server-side decorations on Plasma; customization
+                            options and a compact mode have been added.</li>
+                        <li>DaVinci Installer and Affinity Installer are no longer included by default. They can be
+                            easily installed post-installation with Linexin Hello if needed.</li>
+                        <li>Removed the Rounded Corners extension for GNOME due to instability, breakage after updates
+                            and memory leaks.</li>
+                        <li>…and many other smaller or under-the-hood changes.</li>
+                    </ul>
+                </article>
+
+                <!-- v2.0 -->
+                <article class="release glass-panel reveal" id="v2-0" data-translate-key="cl_v20">
+                    <div class="release-head">
+                        <h2>v2.0</h2>
+                    </div>
+                    <p class="note">Changes compared to the raw v1.1 ISO.</p>
+                    <ul>
+                        <li><strong>Kinexin Desktop</strong>, based on Plasma Desktop, has been added.</li>
+                        <li>The installer now supports choosing between two desktop environments: Linexin Desktop
+                            (GNOME-based) and Kinexin Desktop (KDE Plasma-based).</li>
+                        <li>Desktop Presets now support Kinexin Desktop with five themes:
+                            <ul>
+                                <li><strong>Kinexin</strong> — Linexin Desktop-alike</li>
+                                <li><strong>10ish</strong> — Windows 10-alike</li>
+                                <li><strong>11ish</strong> — Windows 11-alike</li>
+                                <li><strong>2worlds</strong> — a special theme, best for OLED screens</li>
+                                <li><strong>Plasmexin</strong> — a Breeze-based theme</li>
+                            </ul>
+                        </li>
+                        <li>The Linexin Installer has been modified: Disk Utility has been replaced with Partition
+                            Selection. Partitioning is now handled automatically by the installer, and managing existing
+                            partitions is done through GNOME Disks.</li>
+                        <li><strong>Linpama</strong> (Linexin Package Manager) has been added. It works as a pacman and
+                            AUR wrapper and allows installing packages from Linexin Center.</li>
+                        <li>System Updater now supports updating AUR packages. It automatically reinstalls the
+                            kwin-effects present in Kinexin Desktop after kwin updates to maintain all functionality.
+                        </li>
+                        <li>affinity-installer is now <strong>affinity-installer2</strong>: it supports Affinity Photo
+                            2, Designer 2, Publisher 2 and Affinity (2025).</li>
+                        <li>The DaVinci Installer tool has been fixed — the version in v1.1 no longer worked with the
+                            newest DaVinci Resolve.</li>
+                        <li>The system has been fully separated from all its packages. All packages are now downloaded
+                            from linexin-repo when the ISO is built.</li>
+                        <li>GNOME extensions moved from system-based to user-based, so they can be updated regularly.
+                        </li>
+                        <li>Linexin Center now fully supports localization to any language.</li>
+                        <li>Added new wallpapers.</li>
+                        <li>…and many other smaller or under-the-hood changes.</li>
+                    </ul>
+                </article>
+
+                <!-- v1.1 -->
+                <article class="release glass-panel reveal" id="v1-1" data-translate-key="cl_v11">
+                    <div class="release-head">
+                        <h2>v1.1</h2>
+                    </div>
+                    <ul>
+                        <li>Added <strong>Linexin Center</strong>, which:
+                            <ul>
+                                <li>handles all Linexin-specific apps in one place</li>
+                                <li>supports custom widgets written in Python (placed inside
+                                    <code>/usr/share/linexin/widgets/</code>)</li>
+                                <li>handles translations for every widget with a simple dictionary file</li>
+                                <li>has a CLI option to run in single-widget mode
+                                    (<code>linexin-center -w [widget_filename]</code>)</li>
+                                <li>prevents closing the app while a system command is running (e.g.
+                                    <code>pacman -Syu</code>)</li>
+                            </ul>
+                        </li>
+                        <li>Linexin Updater is now integrated inside Linexin Center.</li>
+                        <li>DaVinci Installer and Affinity Installer are now integrated inside Linexin Center.</li>
+                        <li>Calamares has been deprecated — the new <strong>Linexin Installer</strong> replaces it as
+                            the system installer.</li>
+                        <li>Linexin now fully automatically supports:
+                            <ul>
+                                <li>Legacy Boot (GRUB for both dual-boot and single-boot)</li>
+                                <li>UEFI dual-boot for both Windows and other Linux (rEFInd)</li>
+                                <li>UEFI single-boot (systemd-boot with timeout=0)</li>
+                            </ul>
+                        </li>
+                        <li>AppImageLauncher has been deprecated. The system now uses Gear Lever for handling AppImages.
+                        </li>
+                        <li>Some Flatpaks are now installed if there's an internet connection during installation: Zen
+                            Browser, Bottles, Faugus Launcher, Heroic Launcher, Gear Lever.</li>
+                        <li>Linexin should now support NVIDIA cards older than Turing (NV160/TUXXX), though this has not
+                            been tested extensively.</li>
+                        <li>Added support for more languages: Chinese, French, German, Hindi, Polish, Portuguese,
+                            Russian, Spanish.</li>
+                        <li>Fixed problems related to sound not playing through the minijack.</li>
+                        <li>Added the <code>linexin-sound-fix-usb-dac</code> script in <code>/bin</code> for USB DACs
+                            with no sound below 30% volume (run with <code>sudo</code>).</li>
+                    </ul>
+                </article>
+
+                <p class="download-note reveal" style="text-align: center; max-width: 800px; margin: 0 auto;"
+                    data-translate-key="cl_github_note">
+                    For the complete history of changes, see the
+                    <a href="https://github.com/Petexy/Linexin/commits/main" target="_blank" rel="noopener">commit
+                        history on GitHub</a>.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand">
+                        <span class="logo-wrap"><img src="logo.png" alt="Linexin Logo" width="32" height="32"></span>
+                        <span>Linexin</span>
+                    </a>
+                    <p data-translate-key="footer_tagline">A fast, elegant Linux distribution based on Arch —
+                        pre-configured for creators and gamers.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate-key="footer_project">Project</h4>
+                    <ul>
+                        <li><a href="index.html#features" data-translate-key="nav_features">Features</a></li>
+                        <li><a href="index.html#showcase" data-translate-key="nav_showcase">Showcase</a></li>
+                        <li><a href="index.html#faq" data-translate-key="nav_faq">FAQ</a></li>
+                        <li><a href="changelog.html" data-translate-key="nav_changelog">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate-key="footer_resources">Resources</h4>
+                    <ul>
+                        <li><a href="download.html" data-translate-key="nav_download">Download</a></li>
+                        <li><a href="download.html#install" data-translate-key="home_card_install_title">Installation
+                                Guide</a></li>
+                        <li><a href="packages.html" data-translate-key="nav_packages">What's Inside</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate-key="footer_community">Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/Petexy/Linexin" target="_blank" rel="noopener noreferrer"
+                                data-translate-key="nav_github">GitHub</a></li>
+                        <li><a href="https://github.com/Petexy/Linexin/issues" target="_blank" rel="noopener noreferrer"
+                                data-translate-key="footer_issues">Report an issue</a></li>
+                        <li><a href="https://github.com/Petexy/Linexin/blob/main/LICENSE" target="_blank"
+                                rel="noopener noreferrer" data-translate-key="footer_license">GPL v3 License</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-translate-key="footer_copy">© 2025-2026 Linexin Project</p>
+                <p data-translate-key="footer_love">Designed with ❤️ for the open-source community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

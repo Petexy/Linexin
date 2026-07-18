@@ -1,359 +1,135 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linexin — Fast, Elegant Arch-based Linux for Creators & Gamers</title>
     <meta name="description"
-        content="Download Linexin Linux. Pre-configured Arch-based Linux distribution built for creators and gamers. Easily install Affinity Suite , DaVinci Resolve on Linux. Made by Petexy / Linexy.">
-    <title>Linexin - Fast and Elegant OS</title>
-    <link rel="icon" type="image/png" href="https://i.ibb.co/n8BPh4sh/logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+        content="Linexin is a pre-configured, Arch-based Linux distribution built for creators and gamers. Easy GUI installers for Affinity Suite and DaVinci Resolve, Steam gaming out of the box, GNOME and KDE Plasma desktops.">
+    <link rel="canonical" href="https://petexy.github.io/Linexin/">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <meta name="theme-color" content="#0f0518">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Linexin">
+    <meta property="og:title" content="Linexin — Fast, Elegant Arch-based Linux for Creators & Gamers">
+    <meta property="og:description"
+        content="Pre-configured Arch-based Linux with GUI installers for Affinity Suite and DaVinci Resolve, Steam gaming out of the box, and your choice of GNOME or KDE Plasma desktop.">
+    <meta property="og:url" content="https://petexy.github.io/Linexin/">
+    <meta property="og:image" content="https://petexy.github.io/Linexin/assets/img/gnome-1.png">
+    <meta property="og:image:width" content="2379">
+    <meta property="og:image:height" content="1334">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preload" as="image" href="assets/img/hero-bg.png">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        bg: '#0f0518',
-                        primary: '#9d4edd',
-                        primaryHover: '#7b2cbf',
-                        surface: '#180a29',
-                    },
-                }
-            }
-        }
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Linexin",
+        "operatingSystem": "Linux",
+        "applicationCategory": "OperatingSystem",
+        "softwareVersion": "2.1.4",
+        "url": "https://petexy.github.io/Linexin/",
+        "downloadUrl": "https://petexy.github.io/Linexin/download.html",
+        "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
     </script>
-
-    <style>
-        :root {
-            --color-primary: #9d4edd;
-        }
-
-        body {
-            background-color: #05010a;
-            color: #e9d5ff;
-            overflow-x: hidden;
-        }
-
-        .noise-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.04;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-
-        .aurora-blob {
-            position: absolute;
-            background: radial-gradient(circle, rgba(157, 78, 221, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: -1;
-            transition: transform 0.1s cubic-bezier(0, 0, 0.2, 1);
-            will-change: transform;
-        }
-
-        .glass-panel {
-            background: rgba(20, 10, 35, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-shimmer {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-shimmer::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn-shimmer:hover::after {
-            left: 100%;
-            transition: 0.7s ease-in-out;
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #fff 0%, #d8b4fe 50%, #9d4edd 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .animate-gradient {
-            background-size: 200% auto;
-            animation: gradientFlow 3s linear infinite;
-        }
-
-        @keyframes gradientFlow {
-            0% {
-                background-position: 0% 50%;
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Linexin OS?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Linexin is a Linux distribution based on Arch Linux. It is designed to be a fast and user-friendly operating system, pre-configured for creative work and games." }
+            },
+            {
+                "@type": "Question",
+                "name": "Who is Linexin for?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Linexin is ideal for content creators who need easy access to tools like the Affinity suite and DaVinci Resolve, gamers looking for an optimized experience with Steam, Epic Games or any other launcher, and anyone who wants a beautiful and performant Arch-based system." }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I install Linexin?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Download the ISO, write it to a USB drive and boot from it. The graphical Linexin Installer guides you through the rest." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Linexin free to use?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes and always will be. Linexin is a free and open-source project. You can download, use, modify, and distribute it freely in accordance with the GNU GPL v3 license." }
+            },
+            {
+                "@type": "Question",
+                "name": "What desktop environment does it use?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Linexin uses a beautifully customized GNOME environment by default. You can pick a carefully crafted custom KDE Plasma environment instead during the installation." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Linexin immutable?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No, it is not immutable. However, it ships minimal system packages. Average users are advised to use Flatpaks, while power users can use pacman and the AUR." }
             }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: #9d4edd;
-            transition: width 0.3s ease-in-out;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .tilt-card {
-            transform-style: preserve-3d;
-            transform: perspective(1000px);
-            transition: transform 0.1s ease-out;
-        }
-
-        .tilt-content {
-            transform: translateZ(20px);
-        }
-
-        /* --- NEW: FAQ Animation Styles --- */
-        .faq-answer {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            border-top-color: transparent;
-            /* Hide border when closed */
-            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.4s ease,
-                border-color 0.3s ease;
-        }
-
-        .faq-answer.open {
-            opacity: 1;
-            border-top-color: rgba(255, 255, 255, 0.05);
-            /* Restore border */
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0f0518;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #331849;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #9d4edd;
-        }
-
-        .segmented-control {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 4px;
-            border-radius: 999px;
-            display: inline-flex;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .segment-btn {
-            padding: 8px 24px;
-            border-radius: 999px;
-            font-weight: 600;
-            position: relative;
-            z-index: 10;
-            transition: color 0.3s;
-        }
-
-        .segment-active {
-            color: white;
-        }
-
-        .segment-inactive {
-            color: #9ca3af;
-        }
-
-        .segment-inactive:hover {
-            color: #e9d5ff;
-        }
-
-        .segment-slider {
-            position: absolute;
-            top: 4px;
-            bottom: 4px;
-            left: 4px;
-            width: calc(50% - 4px);
-            background: #9d4edd;
-            border-radius: 999px;
-            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-            z-index: 1;
-            box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .loading-overlay {
-            position: fixed;
-            inset: 0;
-            background: #0f0518;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.5s ease-out;
-        }
-
-        #navbar-container {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-    </style>
+        ]
+    }
+    </script>
 </head>
 
-<body class="antialiased selection:bg-[#9d4edd] selection:text-white">
+<body>
 
-    <div id="loading-overlay" class="loading-overlay">
-        <div class="w-16 h-16 border-4 border-white/10 border-t-[#9d4edd] rounded-full animate-spin"></div>
+    <a href="#main" class="skip-link" data-translate-key="skip_link">Skip to content</a>
+
+    <div class="noise-bg" aria-hidden="true"></div>
+    <div class="aurora-wrap" aria-hidden="true">
+        <div class="aurora-blob one"></div>
+        <div class="aurora-blob two"></div>
     </div>
 
-    <div class="noise-bg"></div>
-
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div class="aurora-blob w-[500px] h-[500px] top-[-10%] left-[-10%] opacity-40"></div>
-        <div class="aurora-blob w-[600px] h-[600px] bottom-[-10%] right-[-10%] opacity-30"></div>
-    </div>
-
-    <nav class="fixed left-1/2 -translate-x-1/2 z-50 w-full flex justify-center pointer-events-none">
-        <div id="navbar-container"
-            class="pointer-events-auto mt-0 w-full max-w-full rounded-none border-b border-white/10 bg-[#0f0518]/80 backdrop-blur-md py-3 flex justify-center items-center relative shadow-lg">
-
-            <div class="w-full max-w-6xl px-6 flex justify-between items-center h-full">
-
-                <a href="#" class="flex items-center gap-x-3 group">
-                    <div class="relative">
-                        <div
-                            class="absolute inset-0 bg-[#9d4edd] blur-lg opacity-40 group-hover:opacity-60 transition-opacity">
-                        </div>
-                        <img src="https://i.ibb.co/n8BPh4sh/logo.png" alt="Linexin Logo" class="relative h-8 w-8"
-                            data-translate-key="logo_alt" data-translate-type="alt">
-                    </div>
-                    <span class="text-xl font-bold tracking-tight text-white">Linexin</span>
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <div class="nav-content">
+                <a href="index.html" class="nav-brand">
+                    <span class="logo-wrap"><img src="logo.png" alt="Linexin Logo" width="32" height="32" data-translate-key="logo_alt"
+                            data-translate-type="alt"></span>
+                    <span>Linexin</span>
                 </a>
 
-                <div class="hidden md:flex items-center gap-8">
-                    <div class="flex gap-6 text-sm font-medium text-gray-300">
-                        <a href="#features" class="nav-link hover:text-white transition-colors"
-                            data-translate-key="nav_features">Features</a>
-                        <a href="#showcase" class="nav-link hover:text-white transition-colors"
-                            data-translate-key="nav_showcase">Showcase</a>
-                        <a href="#faq" class="nav-link hover:text-white transition-colors"
-                            data-translate-key="nav_faq">FAQ</a>
-                        <a href="#community" class="nav-link hover:text-white transition-colors"
-                            data-translate-key="nav_github">GitHub</a>
-                    </div>
+                <div class="nav-links">
+                    <a href="index.html" class="active" data-translate-key="nav_home">Home</a>
+                    <a href="packages.html" data-translate-key="nav_packages">What's Inside</a>
+                    <a href="changelog.html" data-translate-key="nav_changelog">Changelog</a>
+                    <a href="https://github.com/Petexy/Linexin" target="_blank" rel="noopener noreferrer"
+                        data-translate-key="nav_github">GitHub</a>
 
-                    <div class="h-4 w-px bg-white/10"></div>
+                    <div class="nav-sep" aria-hidden="true"></div>
 
-                    <div class="relative group z-50">
-                        <button
-                            class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors gap-1">
-                            <span id="current-lang-desktop">EN</span>
-                            <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
+                    <div class="lang-menu">
+                        <button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false"
+                            aria-label="Change language" data-translate-key="aria_change_language" data-translate-attr="aria-label">
+                            <span class="lang-current">EN</span>
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                                </path>
                             </svg>
                         </button>
-                        <div
-                            class="absolute right-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right">
-                            <div
-                                class="bg-[#1a0b2e] border border-white/10 rounded-xl p-2 w-40 flex flex-col gap-1 shadow-2xl overflow-hidden">
-                                <a href="#"
-                                    class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                                    data-lang="en">English</a>
-                                <a href="#"
-                                    class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                                    data-lang="pl">Polski</a>
-                                <a href="#"
-                                    class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                                    data-lang="ru">Русский</a>
-                                <a href="#"
-                                    class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                                    data-lang="es">Español</a>
-                                <a href="#"
-                                    class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                                    data-lang="ua">Українська</a>
-                                <a href="#"
-                                    class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                                    data-lang="de">Deutsch</a>
-                                <a href="#"
-                                    class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                                    data-lang="fr">Français</a>
-                                <a href="#"
-                                    class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                                    data-lang="pt">Português</a>
-                                <a href="#"
-                                    class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                                    data-lang="zh">中文</a>
-                                <a href="#"
-                                    class="px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                                    data-lang="hi">हिन्दी</a>
-                            </div>
-                        </div>
+                        <div class="lang-list" id="lang-list"></div>
                     </div>
 
-                    <a href="https://download1980.mediafire.com/r87xrgk9g6tgWD5ReJwMlhNRgGmkA00VGR_w3KSxcKwtW9vg_RPB4egOdcwwIVX5E16BlVNO7hPgvRxLj50gYDUCxcb4zsZtc2qniaIiSy4dQO9MdYBJ_Iscbs7TgD6IOdXkIbEWlJ7ScArrnJGRP1OHV0Zeqyeyq29SzbcNTM4pog/0dfrgizgbaj7kzu/linexin-2026-v2.1.4-x86_64.iso"
-                        class="btn-shimmer bg-[#9d4edd] text-white px-5 py-2 rounded-full text-sm font-semibold shadow-[0_0_20px_rgba(157,78,221,0.3)] hover:shadow-[0_0_30px_rgba(157,78,221,0.5)] hover:scale-105 active:scale-95 transition-all duration-300"
-                        data-translate-key="nav_download">
-                        Download
-                    </a>
+                    <a href="download.html" class="btn btn-primary btn-shimmer nav-cta"
+                        data-translate-key="nav_download">Download</a>
                 </div>
 
-                <button id="mobile-menu-btn" class="md:hidden text-white p-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button type="button" class="menu-toggle" aria-label="Open menu" data-translate-key="aria_open_menu" data-translate-attr="aria-label" aria-expanded="false">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
@@ -361,162 +137,162 @@
             </div>
         </div>
 
-        <div id="mobile-menu"
-            class="hidden absolute top-full left-0 right-0 mt-4 mx-4 glass-panel rounded-2xl p-4 flex-col gap-4 pointer-events-auto">
-            <a href="#features" class="block p-2 text-gray-300 hover:text-white"
-                data-translate-key="nav_features">Features</a>
-            <a href="#showcase" class="block p-2 text-gray-300 hover:text-white"
-                data-translate-key="nav_showcase">Showcase</a>
-            <a href="#faq" class="block p-2 text-gray-300 hover:text-white" data-translate-key="nav_faq">FAQ</a>
-            <a href="https://download1980.mediafire.com/r87xrgk9g6tgWD5ReJwMlhNRgGmkA00VGR_w3KSxcKwtW9vg_RPB4egOdcwwIVX5E16BlVNO7hPgvRxLj50gYDUCxcb4zsZtc2qniaIiSy4dQO9MdYBJ_Iscbs7TgD6IOdXkIbEWlJ7ScArrnJGRP1OHV0Zeqyeyq29SzbcNTM4pog/0dfrgizgbaj7kzu/linexin-2026-v2.1.4-x86_64.iso"
-                class="block w-full text-center bg-[#9d4edd] text-white py-3 rounded-xl font-semibold hover:scale-105 active:scale-95 transition-all"
-                data-translate-key="nav_download">Download</a>
-            <div class="grid grid-cols-5 gap-2 pt-4 border-t border-white/10 text-center text-xs text-gray-400">
-                <span data-lang="en">EN</span><span data-lang="pl">PL</span><span data-lang="ru">RU</span><span
-                    data-lang="de">DE</span><span data-lang="fr">FR</span>
-            </div>
+        <div id="mobile-menu" class="mobile-menu glass-panel">
+            <a href="index.html" class="active" data-translate-key="nav_home">Home</a>
+            <a href="packages.html" data-translate-key="nav_packages">What's Inside</a>
+            <a href="changelog.html" data-translate-key="nav_changelog">Changelog</a>
+            <a href="https://github.com/Petexy/Linexin" target="_blank" rel="noopener noreferrer"
+                data-translate-key="nav_github">GitHub</a>
+            <a href="download.html" class="btn btn-primary" data-translate-key="nav_download">Download</a>
+            <div class="mobile-langs" id="mobile-langs"></div>
         </div>
     </nav>
 
-    <main class="relative z-10">
-        <section class="relative min-h-screen flex items-center justify-center pt-24 pb-20 overflow-hidden">
-            <div class="absolute inset-0 -z-20">
-                <img src="https://i.ibb.co/Vcx6FVSM/logo.png" alt="Background"
-                    class="w-full h-full object-cover opacity-40 mix-blend-overlay" decoding="async">
-            </div>
+    <main id="main">
 
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f0518]/80 to-[#0f0518] -z-10"></div>
+        <!-- ================= HERO ================= -->
+        <section class="hero">
+            <div class="hero-bg" aria-hidden="true"><img src="assets/img/hero-bg.png" alt="" width="5000"
+                    height="5000" decoding="async"></div>
+            <div class="hero-fade" aria-hidden="true"></div>
 
-            <div class="container relative mx-auto px-6 text-center z-10">
-                <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-[#d8b4fe] mb-8 reveal">
-                    <span class="w-2 h-2 rounded-full bg-[#9d4edd] animate-pulse"></span>
-                    <span data-translate-key="hero_badge">v2.1 Now Available</span>
-                </div>
+            <div class="container">
+                <a href="changelog.html" class="badge reveal">
+                    <span class="dot"></span>
+                    <span data-translate-key="hero_badge">v2.1.4 Now Available</span>
+                </a>
 
-                <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-white mb-6 reveal stagger-1 leading-[1.1]"
-                    data-translate-key="hero_title">
-                    Experience <br>
-                    <span class="text-gradient animate-gradient">Computing Freedom</span>
+                <h1 class="reveal stagger-1" data-translate-key="hero_title">
+                    Experience <br> <span class="text-gradient">Computing Freedom</span>
                 </h1>
 
-                <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 reveal stagger-2 leading-relaxed"
-                    data-translate-key="hero_subtitle">
-                    A lightweight Linux distribution that combines elegance with powerful performance. Use preconfigured
-                    Arch-based (btw) distro that is ready to use, play your favorite games and easily install creative
-                    tools like Affinity suite or DaVinci Resolve.
+                <p class="subtitle reveal stagger-2" data-translate-key="hero_subtitle">
+                    A lightweight Linux distribution that combines elegance with powerful performance. Enjoy a
+                    preconfigured Arch-based (btw) distro that is ready out of the box — play your favorite games and
+                    easily install creative tools like the Affinity suite or DaVinci Resolve.
                 </p>
 
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 reveal stagger-3">
-                    <a href="https://download1980.mediafire.com/r87xrgk9g6tgWD5ReJwMlhNRgGmkA00VGR_w3KSxcKwtW9vg_RPB4egOdcwwIVX5E16BlVNO7hPgvRxLj50gYDUCxcb4zsZtc2qniaIiSy4dQO9MdYBJ_Iscbs7TgD6IOdXkIbEWlJ7ScArrnJGRP1OHV0Zeqyeyq29SzbcNTM4pog/0dfrgizgbaj7kzu/linexin-2026-v2.1.4-x86_64.iso"
-                        class="btn-shimmer bg-[#9d4edd] hover:bg-[#8b3cc1] text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg shadow-[#9d4edd]/25 hover:scale-105 active:scale-95 transition-all duration-300 w-full sm:w-auto"
-                        data-translate-key="hero_button_download">
-                        Download Now
-                    </a>
-                    <a href="#features"
-                        class="px-8 py-4 rounded-xl text-lg font-medium text-white border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 w-full sm:w-auto"
-                        data-translate-key="hero_button_learn">
-                        Learn More
-                    </a>
+                <div class="hero-actions reveal stagger-3">
+                    <a href="download.html" class="btn btn-primary btn-shimmer"
+                        data-translate-key="hero_button_download">Download Now</a>
+                    <a href="#features" class="btn btn-ghost" data-translate-key="hero_button_learn">Learn More</a>
+                </div>
+
+                <p class="hero-meta reveal stagger-4" data-translate-key="hero_meta">
+                    Free &amp; open source · GNU GPL v3 · x86_64</p>
+
+            </div>
+        </section>
+
+        <!-- ================= FEATURES ================= -->
+        <section id="features">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 data-translate-key="features_title">Why Choose Linexin?</h2>
+                    <p data-translate-key="features_subtitle">Everything you need, nothing you don't.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card glass-panel reveal stagger-1">
+                        <div class="feature-icon icon-red">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 data-translate-key="feature_1_title">Blazing Fast</h3>
+                        <p data-translate-key="feature_1_text">Built on a minimal base, Linexin is optimized for speed
+                            and responsiveness, booting up in seconds.</p>
+                    </div>
+
+                    <div class="feature-card glass-panel reveal stagger-2">
+                        <div class="feature-icon icon-blue">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z" />
+                            </svg>
+                        </div>
+                        <h3 data-translate-key="feature_2_title">Creative Work</h3>
+                        <p data-translate-key="feature_2_text">With Affinity Installer and DaVinci Installer built-in,
+                            you can easily use creative tools after only a couple of clicks.</p>
+                    </div>
+
+                    <div class="feature-card glass-panel reveal stagger-3">
+                        <div class="feature-icon icon-green">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 data-translate-key="feature_3_title">Gaming Ready</h3>
+                        <p data-translate-key="feature_3_text">Comes pre-packaged with Steam, gamescope and gamemode
+                            that can boost your gaming performance.</p>
+                    </div>
+
+                    <div class="feature-card glass-panel reveal stagger-1">
+                        <div class="feature-icon icon-purple">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                            </svg>
+                        </div>
+                        <h3 data-translate-key="feature_4_title">Flatpak &amp; AppImage</h3>
+                        <p data-translate-key="feature_4_text">Flatpak and AppImage support works out of the box.</p>
+                    </div>
+
+                    <div class="feature-card glass-panel reveal stagger-2">
+                        <div class="feature-icon icon-pink">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 data-translate-key="feature_5_title">Two Desktops</h3>
+                        <p data-translate-key="feature_5_text">Pick the GNOME-based Linexin Desktop or the KDE
+                            Plasma-based Kinexin Desktop during installation — both come beautifully pre-configured.</p>
+                    </div>
+
+                    <div class="feature-card glass-panel reveal stagger-3">
+                        <div class="feature-icon icon-amber">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                        </div>
+                        <h3 data-translate-key="feature_6_title">Always Up To Date</h3>
+                        <p data-translate-key="feature_6_text">Powered by Arch Linux's rolling release model, you get
+                            the newest kernels, drivers and software as soon as they're released.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="py-24 relative">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-translate-key="features_title">Why
-                        Choose Linexin?</h2>
-                    <p class="text-gray-400" data-translate-key="features_subtitle">Everything you need, nothing you
-                        don't.</p>
+        <!-- ================= SHOWCASE ================= -->
+        <section id="showcase" style="background: linear-gradient(to bottom, transparent, rgba(15,5,24,0.5));">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 data-translate-key="showcase_title">Beautifully Crafted Desktop</h2>
+                    <p data-translate-key="showcase_subtitle">An interface that's both powerful and a pleasure to use.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div
-                        class="glass-panel p-8 rounded-3xl hover:border-[#9d4edd]/50 transition-colors duration-300 group reveal stagger-1 tilt-card">
-                        <div class="tilt-content">
-                            <div
-                                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3" data-translate-key="feature_1_title">Blazing
-                                Fast</h3>
-                            <p class="text-gray-400 leading-relaxed" data-translate-key="feature_1_text">Built on a
-                                minimal base, Linexin is optimized for speed and responsiveness, booting up in seconds.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="glass-panel p-8 rounded-3xl hover:border-[#9d4edd]/50 transition-colors duration-300 group reveal stagger-2 tilt-card">
-                        <div class="tilt-content">
-                            <div
-                                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3" data-translate-key="feature_2_title">Creative
-                                Work</h3>
-                            <p class="text-gray-400 leading-relaxed" data-translate-key="feature_2_text">With Affinity
-                                Installer and DaVinci Installer built-in, you can easily use creative tools after only a
-                                couple of clicks.</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="glass-panel p-8 rounded-3xl hover:border-[#9d4edd]/50 transition-colors duration-300 group reveal stagger-3 tilt-card">
-                        <div class="tilt-content">
-                            <div
-                                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3" data-translate-key="feature_3_title">Gaming
-                                Ready</h3>
-                            <p class="text-gray-400 leading-relaxed" data-translate-key="feature_3_text">Comes
-                                pre-packaged with Steam, gamescope and gamemode that can boost your gaming performance.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="showcase" class="py-24 bg-gradient-to-b from-transparent to-[#0f0518]/50">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col items-center mb-12 text-center reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-translate-key="showcase_title">
-                        Beautifully Crafted Desktop</h2>
-                    <p class="text-gray-400" data-translate-key="showcase_subtitle">An interface that's both powerful
-                        and a pleasure to use.</p>
-                </div>
-
-                <div class="relative glass-panel p-2 rounded-2xl max-w-5xl mx-auto shadow-2xl reveal">
-                    <div class="overflow-hidden rounded-xl aspect-video bg-black/50 relative">
-                        <img id="showcase-image" src="" alt="OS Screenshot"
-                            class="w-full h-full object-cover transition-opacity duration-500">
-                        <div class="absolute inset-0 flex items-center justify-between p-4 pointer-events-none">
-                            <button id="prev-button"
-                                class="pointer-events-auto p-3 rounded-full bg-black/30 backdrop-blur-md text-white hover:bg-white/10 transition-all border border-white/10">
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="carousel glass-panel reveal" role="group" aria-label="Screenshot carousel"
+                    data-carousel="assets/img/showcase-4.png, assets/img/showcase-2.png, assets/img/showcase-3.png, assets/img/showcase-1.png"
+                    data-captions="Linexin Center|Affinity|DaVinci Resolve|Linexin Installer">
+                    <div class="carousel-frame">
+                        <img src="assets/img/showcase-4.png" alt="Linexin OS screenshot" width="1980" height="1080"
+                            loading="lazy">
+                        <div class="carousel-nav">
+                            <button type="button" class="carousel-prev" aria-label="Previous screenshot">
+                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M15 19l-7-7 7-7" />
                                 </svg>
                             </button>
-                            <button id="next-button"
-                                class="pointer-events-auto p-3 rounded-full bg-black/30 backdrop-blur-md text-white hover:bg-white/10 transition-all border border-white/10">
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <button type="button" class="carousel-next" aria-label="Next screenshot">
+                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 5l7 7-7 7" />
                                 </svg>
@@ -524,140 +300,164 @@
                         </div>
                     </div>
                 </div>
+                <div class="carousel-dots" role="tablist"></div>
 
-                <div class="mt-32 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 reveal"
-                        data-translate-key="more_showcase_title">Change your style!</h2>
+                <div style="margin-top: 96px; text-align: center;">
+                    <div class="section-head reveal">
+                        <h2 data-translate-key="more_showcase_title">Change your style!</h2>
+                        <p data-translate-key="more_showcase_subtitle">Four ready-made styles for each desktop —
+                            switchable with one click using the built-in app.</p>
+                    </div>
 
-                    <div class="mb-12 reveal">
-                        <div class="segmented-control">
-                            <div class="segment-slider" id="slider-bg"></div>
-                            <button id="btn-linexin" class="segment-btn segment-active"
-                                data-translate-key="style_btn_linexin">
-                                Linexin Desktop
-                            </button>
-                            <button id="btn-kinexin" class="segment-btn segment-inactive"
-                                data-translate-key="style_btn_kinexin">
-                                Kinexin Desktop
-                            </button>
+                    <div class="reveal" style="margin-bottom: 44px;">
+                        <div class="segmented-control" data-segments>
+                            <div class="segment-slider"></div>
+                            <button type="button" class="segment-btn active" data-seg-target="#grid-linexin"
+                                data-translate-key="style_btn_linexin">Linexin Desktop</button>
+                            <button type="button" class="segment-btn" data-seg-target="#grid-kinexin"
+                                data-translate-key="style_btn_kinexin">Kinexin Desktop</button>
                         </div>
                     </div>
 
-                    <div id="grid-linexin"
-                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto transition-all duration-500">
-                        <div
-                            class="group glass-panel rounded-2xl overflow-hidden p-1 reveal stagger-1 transition-transform duration-300 hover:-translate-y-2">
-                            <div class="overflow-hidden rounded-xl aspect-video">
-                                <img src="https://i.ibb.co/hFhzgnwL/gnome1.png"
-                                    class="w-full h-full object-cover group-hover:opacity-90 transition-opacity">
-                            </div>
-                            <div class="py-3 font-medium text-white">Linexin</div>
+                    <div id="grid-linexin" class="gallery-grid">
+                        <div class="gallery-card glass-panel reveal stagger-1">
+                            <div class="shot"><img src="assets/img/gnome-1.png"
+                                    alt="Linexin Desktop — default style" data-translate-key="alt_linexin_default" data-translate-attr="alt" width="2379" height="1334" loading="lazy"></div>
+                            <div class="label" data-translate-key="style_linexin_default">Linexin</div>
                         </div>
-                        <div
-                            class="group glass-panel rounded-2xl overflow-hidden p-1 reveal stagger-2 transition-transform duration-300 hover:-translate-y-2">
-                            <div class="overflow-hidden rounded-xl aspect-video">
-                                <img src="https://i.ibb.co/3mzT5TdD/gnome2.png"
-                                    class="w-full h-full object-cover group-hover:opacity-90 transition-opacity">
-                            </div>
-                            <div class="py-3 font-medium text-white">Windows-like</div>
+                        <div class="gallery-card glass-panel reveal stagger-2">
+                            <div class="shot"><img src="assets/img/gnome-2.png"
+                                    alt="Linexin Desktop — Windows-like style" data-translate-key="alt_linexin_windows" data-translate-attr="alt" width="2375" height="1335" loading="lazy"></div>
+                            <div class="label" data-translate-key="style_linexin_windows">Windows-like</div>
                         </div>
-                        <div
-                            class="group glass-panel rounded-2xl overflow-hidden p-1 reveal stagger-3 transition-transform duration-300 hover:-translate-y-2">
-                            <div class="overflow-hidden rounded-xl aspect-video">
-                                <img src="https://i.ibb.co/jkqVk3r1/gnome3.png"
-                                    class="w-full h-full object-cover group-hover:opacity-90 transition-opacity">
-                            </div>
-                            <div class="py-3 font-medium text-white">Ubuntu-like</div>
+                        <div class="gallery-card glass-panel reveal stagger-3">
+                            <div class="shot"><img src="assets/img/gnome-3.png"
+                                    alt="Linexin Desktop — Ubuntu-like style" data-translate-key="alt_linexin_ubuntu" data-translate-attr="alt" width="2377" height="1333" loading="lazy"></div>
+                            <div class="label" data-translate-key="style_linexin_ubuntu">Ubuntu-like</div>
                         </div>
-                        <div
-                            class="group glass-panel rounded-2xl overflow-hidden p-1 reveal stagger-4 transition-transform duration-300 hover:-translate-y-2">
-                            <div class="overflow-hidden rounded-xl aspect-video">
-                                <img src="https://i.ibb.co/rGbWrszR/gnome4.png"
-                                    class="w-full h-full object-cover group-hover:opacity-90 transition-opacity">
-                            </div>
-                            <div class="py-3 font-medium text-white">Pure GNOME</div>
+                        <div class="gallery-card glass-panel reveal stagger-4">
+                            <div class="shot"><img src="assets/img/gnome-4.png"
+                                    alt="Linexin Desktop — pure GNOME style" data-translate-key="alt_linexin_gnome" data-translate-attr="alt" width="2374" height="1337" loading="lazy"></div>
+                            <div class="label" data-translate-key="style_linexin_gnome">Pure GNOME</div>
                         </div>
                     </div>
 
-                    <div id="grid-kinexin"
-                        class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto transition-all duration-500">
-                        <div
-                            class="group glass-panel rounded-2xl overflow-hidden p-1 transition-transform duration-300 hover:-translate-y-2">
-                            <div class="overflow-hidden rounded-xl aspect-video">
-                                <img src="https://i.ibb.co/5xG5SNPX/deco1.png"
-                                    class="w-full h-full object-cover group-hover:opacity-90 transition-opacity">
-                            </div>
-                            <div class="py-3 font-medium text-white" data-translate-key="kinexin_style_1">Kinexin</div>
+                    <div id="grid-kinexin" class="gallery-grid" style="display: none;">
+                        <div class="gallery-card glass-panel">
+                            <div class="shot"><img src="assets/img/kinexin-1.png"
+                                    alt="Kinexin Desktop — default style" data-translate-key="alt_kinexin_default" data-translate-attr="alt" width="1920" height="1080" loading="lazy"></div>
+                            <div class="label" data-translate-key="kinexin_style_1">Kinexin</div>
                         </div>
-                        <div
-                            class="group glass-panel rounded-2xl overflow-hidden p-1 transition-transform duration-300 hover:-translate-y-2">
-                            <div class="overflow-hidden rounded-xl aspect-video">
-                                <img src="https://i.ibb.co/xK7pcPhb/deco2.png"
-                                    class="w-full h-full object-cover group-hover:opacity-90 transition-opacity">
-                            </div>
-                            <div class="py-3 font-medium text-white" data-translate-key="kinexin_style_2">10ish</div>
+                        <div class="gallery-card glass-panel">
+                            <div class="shot"><img src="assets/img/kinexin-2.png"
+                                    alt="Kinexin Desktop — Windows 10-like style" data-translate-key="alt_kinexin_10" data-translate-attr="alt" width="1920" height="1080" loading="lazy"></div>
+                            <div class="label" data-translate-key="kinexin_style_2">10ish</div>
                         </div>
-                        <div
-                            class="group glass-panel rounded-2xl overflow-hidden p-1 transition-transform duration-300 hover:-translate-y-2">
-                            <div class="overflow-hidden rounded-xl aspect-video">
-                                <img src="https://i.ibb.co/MkzDnfrc/deco3.png"
-                                    class="w-full h-full object-cover group-hover:opacity-90 transition-opacity">
-                            </div>
-                            <div class="py-3 font-medium text-white" data-translate-key="kinexin_style_3">11ish</div>
+                        <div class="gallery-card glass-panel">
+                            <div class="shot"><img src="assets/img/kinexin-3.png"
+                                    alt="Kinexin Desktop — Windows 11-like style" data-translate-key="alt_kinexin_11" data-translate-attr="alt" width="1920" height="1080" loading="lazy"></div>
+                            <div class="label" data-translate-key="kinexin_style_3">11ish</div>
                         </div>
-                        <div
-                            class="group glass-panel rounded-2xl overflow-hidden p-1 transition-transform duration-300 hover:-translate-y-2">
-                            <div class="overflow-hidden rounded-xl aspect-video">
-                                <img src="https://i.ibb.co/WpNS1Pb6/deco4.png"
-                                    class="w-full h-full object-cover group-hover:opacity-90 transition-opacity">
-                            </div>
-                            <div class="py-3 font-medium text-white" data-translate-key="kinexin_style_4">2worlds</div>
+                        <div class="gallery-card glass-panel">
+                            <div class="shot"><img src="assets/img/kinexin-4.png"
+                                    alt="Kinexin Desktop — 2worlds style for OLED screens" data-translate-key="alt_kinexin_2worlds" data-translate-attr="alt" width="1920" height="1080" loading="lazy"></div>
+                            <div class="label" data-translate-key="kinexin_style_4">2worlds</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="faq" class="py-24 relative">
-            <div class="container mx-auto px-6 max-w-3xl">
-                <div class="text-center mb-12 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white" data-translate-key="faq_title">Frequently
-                        Asked Questions</h2>
+        <!-- ================= QUICKSTART ================= -->
+        <section id="get-started" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 data-translate-key="qs_title">Up and Running in Minutes</h2>
+                    <p data-translate-key="qs_subtitle">Three steps from download to your new desktop.</p>
                 </div>
 
-                <div class="space-y-4" id="faq-accordion">
-                    <div class="glass-panel rounded-xl overflow-hidden reveal stagger-1 group">
-                        <button
-                            class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-white/5 transition-colors">
-                            <span class="text-lg font-semibold text-white" data-translate-key="faq_q1">What is Linexin
-                                OS?</span>
-                            <svg class="faq-arrow w-5 h-5 text-[#9d4edd] transition-transform duration-300" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
+                <div class="features-grid">
+                    <a href="download.html" class="feature-card quickstep glass-panel reveal stagger-1">
+                        <div class="step-num" aria-hidden="true">1</div>
+                        <h3 data-translate-key="qs_1_t">Download the ISO</h3>
+                        <p data-translate-key="qs_1_b">Grab the latest release — free, no account needed.</p>
+                        <span class="card-cta">
+                            <span data-translate-key="qs_1_c">Get the ISO</span>
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </span>
+                    </a>
+
+                    <a href="download.html#usb" class="feature-card quickstep glass-panel reveal stagger-2">
+                        <div class="step-num" aria-hidden="true">2</div>
+                        <h3 data-translate-key="qs_2_t">Create a bootable USB</h3>
+                        <p data-translate-key="qs_2_b">Write the ISO to a USB drive with Rufus, Etcher or dd — guides
+                            for Windows, Linux and macOS.</p>
+                        <span class="card-cta">
+                            <span data-translate-key="qs_2_c">See the USB guide</span>
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </span>
+                    </a>
+
+                    <a href="download.html#install" class="feature-card quickstep glass-panel reveal stagger-3">
+                        <div class="step-num" aria-hidden="true">3</div>
+                        <h3 data-translate-key="qs_3_t">Boot &amp; install</h3>
+                        <p data-translate-key="qs_3_b">Boot from the USB drive and let the graphical installer do the
+                            rest — no terminal involved.</p>
+                        <span class="card-cta">
+                            <span data-translate-key="qs_3_c">Follow the install steps</span>
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FAQ ================= -->
+        <section id="faq">
+            <div class="container container-narrow">
+                <div class="section-head reveal">
+                    <h2 data-translate-key="faq_title">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item glass-panel reveal stagger-1">
+                        <button type="button" class="faq-question">
+                            <span data-translate-key="faq_q1">What is Linexin OS?</span>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                                </path>
                             </svg>
                         </button>
-                        <div class="faq-answer bg-black/20 border-t border-white/5">
-                            <div class="p-6 text-gray-400 leading-relaxed" data-translate-key="faq_a1">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner" data-translate-key="faq_a1">
                                 Linexin is a Linux distribution based on Arch Linux. It is designed to be a fast and
                                 user-friendly operating system, pre-configured for creative work and games.
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-xl overflow-hidden reveal stagger-2 group">
-                        <button
-                            class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-white/5 transition-colors">
-                            <span class="text-lg font-semibold text-white" data-translate-key="faq_q2">Who is Linexin
-                                for?</span>
-                            <svg class="faq-arrow w-5 h-5 text-[#9d4edd] transition-transform duration-300" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
+                    <div class="faq-item glass-panel reveal stagger-1">
+                        <button type="button" class="faq-question">
+                            <span data-translate-key="faq_q2">Who is Linexin for?</span>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                                </path>
                             </svg>
                         </button>
-                        <div class="faq-answer bg-black/20 border-t border-white/5">
-                            <div class="p-6 text-gray-400 leading-relaxed" data-translate-key="faq_a2">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner" data-translate-key="faq_a2">
                                 Linexin is ideal for content creators who need easy access to tools like the Affinity
                                 suite and DaVinci Resolve, gamers looking for an optimized experience with Steam, Epic
                                 Games or any other Launcher, and anyone who wants a beautiful and performant Arch-based
@@ -666,60 +466,67 @@
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-xl overflow-hidden reveal stagger-3 group">
-                        <button
-                            class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-white/5 transition-colors">
-                            <span class="text-lg font-semibold text-white" data-translate-key="faq_q3">Is Linexin free
-                                to use?</span>
-                            <svg class="faq-arrow w-5 h-5 text-[#9d4edd] transition-transform duration-300" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
+                    <div class="faq-item glass-panel reveal stagger-2">
+                        <button type="button" class="faq-question">
+                            <span data-translate-key="faq_q6">How do I install Linexin?</span>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                                </path>
                             </svg>
                         </button>
-                        <div class="faq-answer bg-black/20 border-t border-white/5">
-                            <div class="p-6 text-gray-400 leading-relaxed" data-translate-key="faq_a3">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner" data-translate-key="faq_a6">
+                                Download the ISO, write it to a USB drive and boot from it. The graphical Linexin
+                                Installer guides you through the rest — check the step-by-step
+                                <a href="download.html#install">installation guide</a> for details.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-panel reveal stagger-2">
+                        <button type="button" class="faq-question">
+                            <span data-translate-key="faq_q3">Is Linexin free to use?</span>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                                </path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner" data-translate-key="faq_a3">
                                 Yes and always will be. Linexin is a free and open-source project. You can download,
                                 use, modify, and distribute it freely with accordance to GNU GPL v3 license.
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-xl overflow-hidden reveal stagger-4 group">
-                        <button
-                            class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-white/5 transition-colors">
-                            <span class="text-lg font-semibold text-white" data-translate-key="faq_q4">What desktop
-                                environment does it use?</span>
-                            <svg class="faq-arrow w-5 h-5 text-[#9d4edd] transition-transform duration-300" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
+                    <div class="faq-item glass-panel reveal stagger-3">
+                        <button type="button" class="faq-question">
+                            <span data-translate-key="faq_q4">What desktop environment does it use?</span>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                                </path>
                             </svg>
                         </button>
-                        <div class="faq-answer bg-black/20 border-t border-white/5">
-                            <div class="p-6 text-gray-400 leading-relaxed" data-translate-key="faq_a4">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner" data-translate-key="faq_a4">
                                 Linexin uses a beautifully customized GNOME environment by default. All extensions can
                                 be disabled for a vanilla experience. <br><br> However, you can pick carefully crafted
                                 custom KDE Plasma environment instead during the installation. With it, you can
                                 experience truly marvelous glass effects all around the system.
-
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-xl overflow-hidden reveal stagger-5 group">
-                        <button
-                            class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-white/5 transition-colors">
-                            <span class="text-lg font-semibold text-white" data-translate-key="faq_q5">Is Linexin
-                                immutable?</span>
-                            <svg class="faq-arrow w-5 h-5 text-[#9d4edd] transition-transform duration-300" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
+                    <div class="faq-item glass-panel reveal stagger-3">
+                        <button type="button" class="faq-question">
+                            <span data-translate-key="faq_q5">Is Linexin immutable?</span>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                                </path>
                             </svg>
                         </button>
-                        <div class="faq-answer bg-black/20 border-t border-white/5">
-                            <div class="p-6 text-gray-400 leading-relaxed" data-translate-key="faq_a5">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner" data-translate-key="faq_a5">
                                 No, it is not immutable. However, it ships minimal system packages. Average users are
                                 advised to use Flatpaks, while power users can use pacman and AUR.
                             </div>
@@ -729,674 +536,85 @@
             </div>
         </section>
 
-        <section id="community" class="py-24 text-center border-t border-white/5 relative bg-[#0f0518]">
-            <div class="container mx-auto px-6 reveal">
-                <h2 class="text-4xl font-bold text-white mb-4" data-translate-key="community_title">Open-Source Project
-                </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto mb-8" data-translate-key="community_subtitle">
+        <!-- ================= COMMUNITY CTA ================= -->
+        <section id="community" class="cta-section">
+            <div class="container reveal">
+                <h2 data-translate-key="community_title">Open-Source Project</h2>
+                <p data-translate-key="community_subtitle">
                     Linexin is built with fully open-sourced code. Fork, modify, or contribute on GitHub.
                 </p>
-                <a href="https://github.com/Petexy/Linexin" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 bg-[#9d4edd]/20 hover:bg-[#9d4edd]/30 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:scale-105 active:scale-95 border border-[#9d4edd]/40 shadow-[0_0_24px_rgba(157,78,221,0.25)] backdrop-blur-md"
-                    data-translate-key="community_button">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd"
-                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    Visit GitHub
-                </a>
+                <div class="cta-actions">
+                    <a href="download.html" class="btn btn-primary btn-shimmer"
+                        data-translate-key="hero_button_download">Download Now</a>
+                    <a href="https://github.com/Petexy/Linexin" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-ghost">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span data-translate-key="community_button">Visit GitHub</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="relative z-10 py-8 text-center text-sm text-gray-500 border-t border-white/5 bg-[#05010a]">
-        <div class="container mx-auto px-6">
-            <p data-translate-key="footer_copy"> 2025-2026 Linexin Project</p>
-            <p class="mt-2" data-translate-key="footer_love">Designed with ❤️ for the open-source community.</p>
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand">
+                        <span class="logo-wrap"><img src="logo.png" alt="Linexin Logo" width="32" height="32"></span>
+                        <span>Linexin</span>
+                    </a>
+                    <p data-translate-key="footer_tagline">A fast, elegant Linux distribution based on Arch —
+                        pre-configured for creators and gamers.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate-key="footer_project">Project</h4>
+                    <ul>
+                        <li><a href="index.html#features" data-translate-key="nav_features">Features</a></li>
+                        <li><a href="index.html#showcase" data-translate-key="nav_showcase">Showcase</a></li>
+                        <li><a href="index.html#faq" data-translate-key="nav_faq">FAQ</a></li>
+                        <li><a href="changelog.html" data-translate-key="nav_changelog">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate-key="footer_resources">Resources</h4>
+                    <ul>
+                        <li><a href="download.html" data-translate-key="nav_download">Download</a></li>
+                        <li><a href="download.html#install" data-translate-key="home_card_install_title">Installation
+                                Guide</a></li>
+                        <li><a href="packages.html" data-translate-key="nav_packages">What's Inside</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate-key="footer_community">Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/Petexy/Linexin" target="_blank" rel="noopener noreferrer"
+                                data-translate-key="nav_github">GitHub</a></li>
+                        <li><a href="https://github.com/Petexy/Linexin/issues" target="_blank" rel="noopener noreferrer"
+                                data-translate-key="footer_issues">Report an issue</a></li>
+                        <li><a href="https://github.com/Petexy/Linexin/blob/main/LICENSE" target="_blank"
+                                rel="noopener noreferrer" data-translate-key="footer_license">GPL v3 License</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-translate-key="footer_copy">© 2025-2026 Linexin Project</p>
+                <p data-translate-key="footer_love">Designed with ❤️ for the open-source community.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        const translations = {
-            en: {
-                logo_alt: "Linexin Logo",
-                nav_features: "Features",
-                nav_showcase: "Showcase",
-                nav_faq: "FAQ",
-                nav_github: "GitHub",
-                nav_download: "Download",
-                hero_badge: "v2.1 Now Available",
-                hero_title: "Experience <br> <span class=\"text-gradient\">Computing Freedom</span>",
-                hero_subtitle: "A lightweight Linux distribution that combines elegance with powerful performance. Use preconfigured Arch-based (btw) distro that is ready to use, play your favorite games and easily install creative tools like Affinity suite or DaVinci Resolve.",
-                hero_button_download: "Download Now",
-                hero_button_learn: "Learn More",
-                features_title: "Why Choose Linexin?",
-                features_subtitle: "Everything you need, nothing you don't.",
-                feature_1_title: "Blazing Fast",
-                feature_1_text: "Built on a minimal base, Linexin is optimized for speed and responsiveness, booting up in seconds.",
-                feature_2_title: "Creative Work",
-                feature_2_text: "With Affinity Installer and DaVinci Installer built-in, you can easily use creative tools after only a couple of clicks.",
-                feature_3_title: "Gaming Ready",
-                feature_3_text: "Comes pre-packaged with Steam, gamescope and gamemode that can boost your gaming performance.",
-                showcase_title: "Beautifully Crafted Desktop",
-                showcase_subtitle: "An interface that's both powerful and a pleasure to use.",
-                more_showcase_title: "Change your style!",
-                style_btn_linexin: "Linexin Desktop",
-                style_btn_kinexin: "Kinexin Desktop",
-                kinexin_style_1: "Kinexin",
-                kinexin_style_2: "10ish",
-                kinexin_style_3: "11ish",
-                kinexin_style_4: "2worlds",
-                faq_title: "Frequently Asked Questions",
-                faq_q1: "What is Linexin OS?",
-                faq_a1: "Linexin is a Linux distribution based on Arch Linux. It is designed to be a fast and user-friendly operating system, pre-configured for creative work and games.",
-                faq_q2: "Who is Linexin for?",
-                faq_a2: "Linexin is ideal for content creators who need easy access to tools like the Affinity suite and DaVinci Resolve, gamers looking for an optimized experience with Steam, Epic Games or any other Launcher, and anyone who wants a beautiful and performant Arch-based system.",
-                faq_q3: "Is Linexin free to use?",
-                faq_a3: "Yes and always will be. Linexin is a free and open-source project. You can download, use, modify, and distribute it freely with accordance to GNU GPL v3 license.",
-                faq_q4: "What desktop environment does it use?",
-                faq_a4: "Linexin uses a beautifully customized GNOME environment by default. All extensions can be disabled for a vanilla experience. <br><br> However, you can pick carefully crafted custom KDE Plasma environment instead during the installation. With it, you can experience truly marvelous glass effects all around the system.",
-                faq_q5: "Is Linexin immutable?",
-                faq_a5: "No, it is not immutable. However, it ships minimal system packages. Average users are advised to use Flatpaks, while power users can use pacman and AUR.",
-                community_title: "Open-Source Project",
-                community_subtitle: "Linexin is built with fully open-sourced code. Fork, modify, or contribute on GitHub.",
-                community_button: "Visit GitHub",
-                footer_copy: "© 2025-2026 Linexin Project",
-                footer_love: "Designed with ❤️ for the open-source community."
-            },
-            pl: {
-                logo_alt: "Logo Linexin",
-                nav_features: "Funkcje",
-                nav_showcase: "Galeria",
-                nav_faq: "FAQ",
-                nav_github: "GitHub",
-                nav_download: "Pobierz",
-                hero_badge: "v2.1 Już Dostępna",
-                hero_title: "Poczuj <br> <span class=\"text-gradient\">Komputerową Wolność</span>",
-                hero_subtitle: "Lekka dystrybucja Linuksa, która łączy elegancję z potężną wydajnością. Używaj wstępnie skonfigurowanego systemu opartego na Archu (btw), gotowego do użycia, graj w ulubione gry i łatwo instaluj narzędzia kreatywne, takie jak pakiet Affinity czy DaVinci Resolve.",
-                hero_button_download: "Pobierz Teraz",
-                hero_button_learn: "Dowiedz się więcej",
-                features_title: "Dlaczego Linexin?",
-                features_subtitle: "Wszystko, czego potrzebujesz, nic zbędnego.",
-                feature_1_title: "Błyskawicznie Szybki",
-                feature_1_text: "Zbudowany na minimalnej bazie, Linexin jest zoptymalizowany pod kątem szybkości i responsywności, uruchamiając się w kilka sekund.",
-                feature_2_title: "Praca Kreatywna",
-                feature_2_text: "Dzięki wbudowanym instalatorom Affinity i DaVinci, możesz łatwo korzystać z narzędzi kreatywnych po zaledwie kilku kliknięciach.",
-                feature_3_title: "Gotowy do Gry",
-                feature_3_text: "Dostarczany ze Steam, gamescope i gamemode, które mogą zwiększyć wydajność w grach.",
-                showcase_title: "Pięknie Wykonany Pulpit",
-                showcase_subtitle: "Interfejs, który jest zarówno potężny, jak i przyjemny w użyciu.",
-                more_showcase_title: "Zmień swój styl!",
-                style_btn_linexin: "Pulpit Linexin",
-                style_btn_kinexin: "Pulpit Kinexin",
-                kinexin_style_1: "Kinexin",
-                kinexin_style_2: "10ish",
-                kinexin_style_3: "11ish",
-                kinexin_style_4: "2worlds",
-                faq_title: "Często Zadawane Pytania",
-                faq_q1: "Czym jest Linexin OS?",
-                faq_a1: "Linexin to dystrybucja Linuksa oparta na Arch Linux. Została zaprojektowana jako szybki i przyjazny dla użytkownika system operacyjny, wstępnie skonfigurowany do pracy kreatywnej i gier.",
-                faq_q2: "Dla kogo jest Linexin?",
-                faq_a2: "Linexin jest idealny dla twórców treści potrzebujących łatwego dostępu do narzędzi takich jak pakiet Affinity i DaVinci Resolve, graczy szukających zoptymalizowanego doświadczenia ze Steam i Epic Games, oraz każdego, kto chce pięknego i wydajnego systemu opartego na Archu.",
-                faq_q3: "Czy Linexin jest darmowy?",
-                faq_a3: "Tak i zawsze będzie. Linexin to projekt darmowy i otwartoźródłowy. Możesz go pobierać, używać, modyfikować i rozpowszechniać zgodnie z licencją GNU GPL v3.",
-                faq_q4: "Jakiego środowiska graficznego używa?",
-                faq_a4: "Linexin domyślnie używa pięknie dostosowanego środowiska GNOME. Wszystkie rozszerzenia można wyłączyć, aby uzyskać czyste doświadczenie. <br><br> Jednak podczas instalacji możesz wybrać starannie przygotowane środowisko KDE Plasma, oferujące wspaniałe efekty przezroczystości w całym systemie.",
-                faq_q5: "Czy Linexin jest niezmienny (immutable)?",
-                faq_a5: "Nie, nie jest systemem immutable. Dostarcza jednak minimalne pakiety systemowe. Przeciętnym użytkownikom zaleca się używanie Flatpaków, podczas gdy zaawansowani użytkownicy mogą korzystać z pacmana i AUR.",
-                community_title: "Projekt Open-Source",
-                community_subtitle: "Linexin jest zbudowany z całkowicie otwartego kodu. Forkuj, modyfikuj lub wspieraj projekt na GitHubie.",
-                community_button: "Odwiedź GitHub",
-                footer_copy: "© 2025-2026 Projekt Linexin",
-                footer_love: "Zaprojektowane z ❤️ dla społeczności open-source."
-            },
-            ru: {
-                logo_alt: "Логотип Linexin",
-                nav_features: "Возможности",
-                nav_showcase: "Галерея",
-                nav_faq: "FAQ",
-                nav_github: "GitHub",
-                nav_download: "Скачать",
-                hero_badge: "v2.1 Уже Доступна",
-                hero_title: "Ощути <br> <span class=\"text-gradient\">Свободу Вычислений</span>",
-                hero_subtitle: "Легкий дистрибутив Linux, сочетающий элегантность с высокой производительностью. Используйте предварительно настроенную систему на базе Arch (btw), готовую к играм и творчеству с инструментами вроде Affinity и DaVinci Resolve.",
-                hero_button_download: "Скачать Сейчас",
-                hero_button_learn: "Узнать Больше",
-                features_title: "Почему Linexin?",
-                features_subtitle: "Все, что нужно, и ничего лишнего.",
-                feature_1_title: "Молниеносная Скорость",
-                feature_1_text: "Построенный на минимальной базе, Linexin оптимизирован для скорости и отзывчивости, загружаясь за считанные секунды.",
-                feature_2_title: "Творческая Работа",
-                feature_2_text: "Благодаря встроенным установщикам Affinity и DaVinci, вы можете начать творить всего за пару кликов.",
-                feature_3_title: "Готов к Играм",
-                feature_3_text: "Поставляется с предустановленными Steam, gamescope и gamemode для повышения производительности в играх.",
-                showcase_title: "Красивый Рабочий Стол",
-                showcase_subtitle: "Интерфейс, который одновременно мощный и приятный в использовании.",
-                more_showcase_title: "Измени свой стиль!",
-                style_btn_linexin: "Linexin Desktop",
-                style_btn_kinexin: "Kinexin Desktop",
-                kinexin_style_1: "Kinexin",
-                kinexin_style_2: "Стиль 10",
-                kinexin_style_3: "Стиль 11",
-                kinexin_style_4: "2worlds",
-                faq_title: "Часто Задаваемые Вопросы",
-                faq_q1: "Что такое Linexin OS?",
-                faq_a1: "Linexin — это дистрибутив Linux на базе Arch. Это быстрая и удобная ОС, предварительно настроенная для творчества и игр.",
-                faq_q2: "Для кого Linexin?",
-                faq_a2: "Linexin идеален для создателей контента, которым нужен доступ к Affinity и DaVinci Resolve, геймеров, ищущих оптимизацию для Steam и других лаунчеров, а также всех, кто хочет красивую систему на базе Arch.",
-                faq_q3: "Linexin бесплатен?",
-                faq_a3: "Да, и всегда будет. Linexin — это бесплатный проект с открытым исходным кодом (GNU GPL v3).",
-                faq_q4: "Какое окружение рабочего стола используется?",
-                faq_a4: "Linexin по умолчанию использует настроенный GNOME. Вы можете отключить расширения для стандартного вида. <br><br> При установке также можно выбрать кастомный KDE Plasma с великолепными эффектами прозрачности.",
-                faq_q5: "Является ли Linexin неизменяемым (immutable)?",
-                faq_a5: "Нет. Однако система поставляется с минимальным набором пакетов. Обычным пользователям рекомендуется использовать Flatpak, а опытным — pacman и AUR.",
-                community_title: "Open-Source Проект",
-                community_subtitle: "Linexin создан на полностью открытом коде. Форкайте, изменяйте или вносите свой вклад на GitHub.",
-                community_button: "Посетить GitHub",
-                footer_copy: "© 2025-2026 Проект Linexin",
-                footer_love: "Создано с ❤️ для сообщества open-source."
-            },
-            es: {
-                logo_alt: "Logotipo de Linexin",
-                nav_features: "Características",
-                nav_showcase: "Galería",
-                nav_faq: "FAQ",
-                nav_github: "GitHub",
-                nav_download: "Descargar",
-                hero_badge: "v2.1 Ya Disponible",
-                hero_title: "Experimenta <br> <span class=\"text-gradient\">La Libertad Informática</span>",
-                hero_subtitle: "Una distribución ligera de Linux que combina elegancia con un rendimiento potente. Usa una distro basada en Arch (btw) preconfigurada y lista para usar, juega tus juegos favoritos e instala fácilmente herramientas creativas como la suite Affinity o DaVinci Resolve.",
-                hero_button_download: "Descargar Ahora",
-                hero_button_learn: "Más Información",
-                features_title: "¿Por qué elegir Linexin?",
-                features_subtitle: "Todo lo que necesitas, nada que no.",
-                feature_1_title: "Increíblemente Rápido",
-                feature_1_text: "Construido sobre una base mínima, Linexin está optimizado para velocidad y capacidad de respuesta, arrancando en segundos.",
-                feature_2_title: "Trabajo Creativo",
-                feature_2_text: "Con los instaladores de Affinity y DaVinci integrados, puedes usar herramientas creativas fácilmente tras solo un par de clics.",
-                feature_3_title: "Listo para Jugar",
-                feature_3_text: "Viene pre-empaquetado con Steam, gamescope y gamemode que pueden mejorar tu rendimiento de juego.",
-                showcase_title: "Escritorio Bellamente Diseñado",
-                showcase_subtitle: "Una interfaz que es tanto potente como un placer de usar.",
-                more_showcase_title: "¡Cambia tu estilo!",
-                style_btn_linexin: "Escritorio Linexin",
-                style_btn_kinexin: "Escritorio Kinexin",
-                kinexin_style_1: "Kinexin",
-                kinexin_style_2: "Estilo 10",
-                kinexin_style_3: "Estilo 11",
-                kinexin_style_4: "2worlds",
-                faq_title: "Preguntas Frecuentes",
-                faq_q1: "¿Qué es Linexin OS?",
-                faq_a1: "Linexin es una distribución de Linux basada en Arch Linux. Está diseñada para ser un sistema operativo rápido y fácil de usar, preconfigurado para trabajo creativo y juegos.",
-                faq_q2: "¿Para quién es Linexin?",
-                faq_a2: "Linexin es ideal para creadores de contenido que necesitan acceso fácil a herramientas como la suite Affinity y DaVinci Resolve, jugadores que buscan una experiencia optimizada, y cualquiera que quiera un sistema basado en Arch hermoso y eficiente.",
-                faq_q3: "¿Es Linexin gratuito?",
-                faq_a3: "Sí, y siempre lo será. Linexin es un proyecto de código abierto y gratuito. Puedes descargarlo, usarlo, modificarlo y distribuirlo libremente bajo la licencia GNU GPL v3.",
-                faq_q4: "¿Qué entorno de escritorio utiliza?",
-                faq_a4: "Linexin utiliza un entorno GNOME bellamente personalizado por defecto. <br><br> Sin embargo, puedes elegir un entorno KDE Plasma personalizado durante la instalación para disfrutar de maravillosos efectos de transparencia.",
-                faq_q5: "¿Es Linexin inmutable?",
-                faq_a5: "No, no es inmutable. Sin embargo, viene con paquetes de sistema mínimos. Se aconseja a los usuarios promedio usar Flatpaks, mientras que los usuarios avanzados pueden usar pacman y AUR.",
-                community_title: "Proyecto de Código Abierto",
-                community_subtitle: "Linexin está construido con código totalmente abierto. Haz un fork, modifica o contribuye en GitHub.",
-                community_button: "Visitar GitHub",
-                footer_copy: "© 2025-2026 Proyecto Linexin",
-                footer_love: "Diseñado con ❤️ para la comunidad de código abierto."
-            },
-            ua: {
-                logo_alt: "Логотип Linexin",
-                nav_features: "Можливості",
-                nav_showcase: "Галерея",
-                nav_faq: "FAQ",
-                nav_github: "GitHub",
-                nav_download: "Завантажити",
-                hero_badge: "v2.1 Вже Доступна",
-                hero_title: "Відчуй <br> <span class=\"text-gradient\">Комп'ютерну Свободу</span>",
-                hero_subtitle: "Легкий дистрибутив Linux, що поєднує елегантність та потужну продуктивність. Використовуйте попередньо налаштовану систему на базі Arch (btw), грайте в ігри та легко встановлюйте творчі інструменти, такі як Affinity або DaVinci Resolve.",
-                hero_button_download: "Завантажити Зараз",
-                hero_button_learn: "Дізнатися Більше",
-                features_title: "Чому Linexin?",
-                features_subtitle: "Все, що потрібно, і нічого зайвого.",
-                feature_1_title: "Блискавично Швидкий",
-                feature_1_text: "Побудований на мінімальній базі, Linexin оптимізований для швидкості та чуйності, завантажуючись за лічені секунди.",
-                feature_2_title: "Творча Робота",
-                feature_2_text: "Завдяки вбудованим інсталяторам Affinity та DaVinci, ви можете почати творити лише за пару кліків.",
-                feature_3_title: "Готовий до Ігор",
-                feature_3_text: "Постачається зі Steam, gamescope та gamemode, які можуть покращити вашу ігрову продуктивність.",
-                showcase_title: "Красивий Робочий Стіл",
-                showcase_subtitle: "Інтерфейс, який є одночасно потужним і приємним у використанні.",
-                more_showcase_title: "Зміни свій стиль!",
-                style_btn_linexin: "Linexin Desktop",
-                style_btn_kinexin: "Kinexin Desktop",
-                kinexin_style_1: "Kinexin",
-                kinexin_style_2: "Стиль 10",
-                kinexin_style_3: "Стиль 11",
-                kinexin_style_4: "2worlds",
-                faq_title: "Часті Запитання",
-                faq_q1: "Що таке Linexin OS?",
-                faq_a1: "Linexin — це дистрибутив Linux на базі Arch. Це швидка та зручна ОС, попередньо налаштована для творчості та ігор.",
-                faq_q2: "Для кого Linexin?",
-                faq_a2: "Linexin ідеальний для творців контенту (Affinity, DaVinci Resolve), геймерів, які шукають оптимізацію, та всіх, хто хоче красиву систему на базі Arch.",
-                faq_q3: "Чи Linexin безкоштовний?",
-                faq_a3: "Так, і завжди буде. Linexin — це безкоштовний проект з відкритим кодом (GNU GPL v3).",
-                faq_q4: "Яке середовище робочого столу використовується?",
-                faq_a4: "Linexin за замовчуванням використовує налаштований GNOME. <br><br> Проте під час встановлення ви можете вибрати кастомний KDE Plasma з чудовими ефектами прозорості.",
-                faq_q5: "Чи є Linexin незмінним (immutable)?",
-                faq_a5: "Ні. Однак система постачається з мінімальним набором пакетів. Користувачам рекомендується використовувати Flatpak, а досвідченим — pacman та AUR.",
-                community_title: "Open-Source Проект",
-                community_subtitle: "Linexin створено на повністю відкритому коді. Форкайте, змінюйте або робіть внесок на GitHub.",
-                community_button: "Відвідати GitHub",
-                footer_copy: "© 2025-2026 Проект Linexin",
-                footer_love: "Створено з ❤️ для спільноти open-source."
-            },
-            de: {
-                logo_alt: "Linexin Logo",
-                nav_features: "Funktionen",
-                nav_showcase: "Galerie",
-                nav_faq: "FAQ",
-                nav_github: "GitHub",
-                nav_download: "Herunterladen",
-                hero_badge: "v2.1 Jetzt Verfügbar",
-                hero_title: "Erlebe <br> <span class=\"text-gradient\">Computer-Freiheit</span>",
-                hero_subtitle: "Eine leichtgewichtige Linux-Distribution, die Eleganz mit leistungsstarker Performance verbindet. Nutzen Sie eine vorkonfigurierte Arch-basierte (btw) Distro, die sofort einsatzbereit ist, spielen Sie Ihre Lieblingsspiele und installieren Sie einfach Kreativ-Tools wie die Affinity Suite oder DaVinci Resolve.",
-                hero_button_download: "Jetzt Herunterladen",
-                hero_button_learn: "Mehr Erfahren",
-                features_title: "Warum Linexin?",
-                features_subtitle: "Alles, was Sie brauchen, nichts, was Sie nicht brauchen.",
-                feature_1_title: "Rasend Schnell",
-                feature_1_text: "Auf einer minimalen Basis aufgebaut, ist Linexin für Geschwindigkeit und Reaktionsfähigkeit optimiert und bootet in Sekunden.",
-                feature_2_title: "Kreative Arbeit",
-                feature_2_text: "Mit integrierten Installern für Affinity und DaVinci können Sie Kreativ-Tools nach nur wenigen Klicks nutzen.",
-                feature_3_title: "Bereit für Gaming",
-                feature_3_text: "Kommt vorinstalliert mit Steam, gamescope und gamemode, die Ihre Gaming-Performance steigern können.",
-                showcase_title: "Wunderschön Gestalteter Desktop",
-                showcase_subtitle: "Eine Oberfläche, die sowohl leistungsstark als auch angenehm zu bedienen ist.",
-                more_showcase_title: "Ändern Sie Ihren Stil!",
-                style_btn_linexin: "Linexin Desktop",
-                style_btn_kinexin: "Kinexin Desktop",
-                kinexin_style_1: "Kinexin",
-                kinexin_style_2: "10er Stil",
-                kinexin_style_3: "11er Stil",
-                kinexin_style_4: "2worlds",
-                faq_title: "Häufig Gestellte Fragen",
-                faq_q1: "Was ist Linexin OS?",
-                faq_a1: "Linexin ist eine Linux-Distribution basierend auf Arch Linux. Sie wurde als schnelles und benutzerfreundliches Betriebssystem entwickelt, vorkonfiguriert für kreative Arbeit und Spiele.",
-                faq_q2: "Für wen ist Linexin?",
-                faq_a2: "Linexin ist ideal für Content Creator, die einfachen Zugriff auf Tools wie Affinity und DaVinci Resolve benötigen, Gamer, die eine optimierte Erfahrung suchen, und jeden, der ein schönes Arch-basiertes System möchte.",
-                faq_q3: "Ist Linexin kostenlos?",
-                faq_a3: "Ja und das wird es immer sein. Linexin ist ein kostenloses Open-Source-Projekt (GNU GPL v3).",
-                faq_q4: "Welche Desktop-Umgebung wird verwendet?",
-                faq_a4: "Linexin verwendet standardmäßig eine angepasste GNOME-Umgebung. <br><br> Sie können jedoch während der Installation eine sorgfältig gestaltete KDE Plasma-Umgebung wählen.",
-                faq_q5: "Ist Linexin unveränderlich (immutable)?",
-                faq_a5: "Nein, es ist nicht immutable. Es liefert jedoch minimale Systempakete. Durchschnittsnutzern wird empfohlen, Flatpaks zu verwenden, während Power-User pacman und AUR nutzen können.",
-                community_title: "Open-Source Projekt",
-                community_subtitle: "Linexin basiert auf vollständig offenem Quellcode. Forken, modifizieren oder auf GitHub beitragen.",
-                community_button: "Besuchen Sie GitHub",
-                footer_copy: "© 2025-2026 Linexin Projekt",
-                footer_love: "Entwickelt mit ❤️ für die Open-Source-Community."
-            },
-            fr: {
-                logo_alt: "Logo Linexin",
-                nav_features: "Fonctionnalités",
-                nav_showcase: "Vitrine",
-                nav_faq: "FAQ",
-                nav_github: "GitHub",
-                nav_download: "Télécharger",
-                hero_badge: "v2.1 Maintenant Disponible",
-                hero_title: "Découvrez <br> <span class=\"text-gradient\">La Liberté Informatique</span>",
-                hero_subtitle: "Une distribution Linux légère alliant élégance et performance. Utilisez une distro préconfigurée basée sur Arch (btw), prête à l'emploi, jouez à vos jeux préférés et installez facilement des outils créatifs comme la suite Affinity ou DaVinci Resolve.",
-                hero_button_download: "Télécharger Maintenant",
-                hero_button_learn: "En Savoir Plus",
-                features_title: "Pourquoi choisir Linexin ?",
-                features_subtitle: "Tout ce dont vous avez besoin, rien de superflu.",
-                feature_1_title: "Incroyablement Rapide",
-                feature_1_text: "Construit sur une base minimale, Linexin est optimisé pour la vitesse et la réactivité, démarrant en quelques secondes.",
-                feature_2_title: "Travail Créatif",
-                feature_2_text: "Avec les installateurs Affinity et DaVinci intégrés, vous pouvez utiliser des outils créatifs en quelques clics seulement.",
-                feature_3_title: "Prêt pour le Jeu",
-                feature_3_text: "Livré avec Steam, gamescope et gamemode préinstallés pour booster vos performances de jeu.",
-                showcase_title: "Un Bureau Magnifiquement Conçu",
-                showcase_subtitle: "Une interface à la fois puissante et agréable à utiliser.",
-                more_showcase_title: "Changez votre style !",
-                style_btn_linexin: "Bureau Linexin",
-                style_btn_kinexin: "Bureau Kinexin",
-                kinexin_style_1: "Kinexin",
-                kinexin_style_2: "Style 10",
-                kinexin_style_3: "Style 11",
-                kinexin_style_4: "2worlds",
-                faq_title: "Foire Aux Questions",
-                faq_q1: "Qu'est-ce que Linexin OS ?",
-                faq_a1: "Linexin est une distribution Linux basée sur Arch Linux. Elle est conçue pour être rapide, conviviale et préconfigurée pour le travail créatif et les jeux.",
-                faq_q2: "À qui s'adresse Linexin ?",
-                faq_a2: "Linexin est idéal pour les créateurs de contenu (Affinity, DaVinci Resolve), les joueurs cherchant une expérience optimisée, et quiconque souhaite un beau système basé sur Arch.",
-                faq_q3: "Linexin est-il gratuit ?",
-                faq_a3: "Oui, et il le sera toujours. Linexin est un projet open-source gratuit sous licence GNU GPL v3.",
-                faq_q4: "Quel environnement de bureau est utilisé ?",
-                faq_a4: "Linexin utilise par défaut un environnement GNOME personnalisé. <br><br> Cependant, vous pouvez choisir un environnement KDE Plasma personnalisé lors de l'installation.",
-                faq_q5: "Linexin est-il immuable ?",
-                faq_a5: "Non. Cependant, il est livré avec des paquets système minimaux. Il est conseillé aux utilisateurs d'utiliser des Flatpaks, tandis que les experts peuvent utiliser pacman et AUR.",
-                community_title: "Projet Open-Source",
-                community_subtitle: "Linexin est construit avec un code entièrement open-source. Forkez, modifiez ou contribuez sur GitHub.",
-                community_button: "Visiter GitHub",
-                footer_copy: "© 2025-2026 Projet Linexin",
-                footer_love: "Conçu avec ❤️ pour la communauté open-source."
-            },
-            pt: {
-                logo_alt: "Logotipo Linexin",
-                nav_features: "Recursos",
-                nav_showcase: "Galeria",
-                nav_faq: "FAQ",
-                nav_github: "GitHub",
-                nav_download: "Baixar",
-                hero_badge: "v2.1 Já Disponível",
-                hero_title: "Experimente a <br> <span class=\"text-gradient\">Liberdade Computacional</span>",
-                hero_subtitle: "Uma distribuição Linux leve que combina elegância com desempenho poderoso. Use uma distro baseada em Arch (btw) pré-configurada e pronta para uso, jogue seus jogos favoritos e instale facilmente ferramentas criativas como a suíte Affinity ou DaVinci Resolve.",
-                hero_button_download: "Baixar Agora",
-                hero_button_learn: "Saiba Mais",
-                features_title: "Por que escolher Linexin?",
-                features_subtitle: "Tudo o que você precisa, nada que não precise.",
-                feature_1_title: "Incrivelmente Rápido",
-                feature_1_text: "Construído sobre uma base mínima, o Linexin é otimizado para velocidade e capacidade de resposta, inicializando em segundos.",
-                feature_2_title: "Trabalho Criativo",
-                feature_2_text: "Com instaladores do Affinity e DaVinci integrados, você pode usar ferramentas criativas após apenas alguns cliques.",
-                feature_3_title: "Pronto para Jogos",
-                feature_3_text: "Vem pré-empacotado com Steam, gamescope e gamemode que podem aumentar o desempenho dos seus jogos.",
-                showcase_title: "Desktop Belamente Criado",
-                showcase_subtitle: "Uma interface que é ao mesmo tempo poderosa e prazerosa de usar.",
-                more_showcase_title: "Mude seu estilo!",
-                style_btn_linexin: "Desktop Linexin",
-                style_btn_kinexin: "Desktop Kinexin",
-                kinexin_style_1: "Kinexin",
-                kinexin_style_2: "Estilo 10",
-                kinexin_style_3: "Estilo 11",
-                kinexin_style_4: "2worlds",
-                faq_title: "Perguntas Frequentes",
-                faq_q1: "O que é o Linexin OS?",
-                faq_a1: "Linexin é uma distribuição Linux baseada no Arch Linux. Projetada para ser rápida e amigável, pré-configurada para trabalho criativo e jogos.",
-                faq_q2: "Para quem é o Linexin?",
-                faq_a2: "O Linexin é ideal para criadores de conteúdo que precisam de acesso fácil a ferramentas como Affinity e DaVinci Resolve, gamers e qualquer pessoa que queira um sistema baseado em Arch bonito.",
-                faq_q3: "O Linexin é gratuito?",
-                faq_a3: "Sim, e sempre será. O Linexin é um projeto de código aberto e gratuito (GNU GPL v3).",
-                faq_q4: "Qual ambiente de desktop ele usa?",
-                faq_a4: "O Linexin usa um ambiente GNOME personalizado por padrão. <br><br> No entanto, você pode escolher um ambiente KDE Plasma personalizado durante a instalação.",
-                faq_q5: "O Linexin é imutável?",
-                faq_a5: "Não. No entanto, ele vem com pacotes de sistema mínimos. Recomenda-se o uso de Flatpaks para usuários médios, enquanto usuários avançados podem usar pacman e AUR.",
-                community_title: "Projeto Open-Source",
-                community_subtitle: "O Linexin é construído com código totalmente aberto. Faça um fork, modifique ou contribua no GitHub.",
-                community_button: "Visitar GitHub",
-                footer_copy: "© 2025-2026 Projeto Linexin",
-                footer_love: "Projetado com ❤️ para a comunidade open-source."
-            },
-            zh: {
-                logo_alt: "Linexin 徽标",
-                nav_features: "特性",
-                nav_showcase: "展示",
-                nav_faq: "常见问题",
-                nav_github: "GitHub",
-                nav_download: "下载",
-                hero_badge: "v2.1 现已发布",
-                hero_title: "体验 <br> <span class=\"text-gradient\">计算自由</span>",
-                hero_subtitle: "一款结合优雅与强大性能的轻量级 Linux 发行版。使用预配置的基于 Arch (btw) 的系统，开箱即用，畅玩喜爱的游戏，并轻松安装 Affinity 套件或 DaVinci Resolve 等创意工具。",
-                hero_button_download: "立即下载",
-                hero_button_learn: "了解更多",
-                features_title: "为什么选择 Linexin？",
-                features_subtitle: "所需一切，别无冗余。",
-                feature_1_title: "极速体验",
-                feature_1_text: "建立在极简基础之上，Linexin 针对速度和响应进行了优化，数秒内即可启动。",
-                feature_2_title: "创意工作",
-                feature_2_text: "内置 Affinity 和 DaVinci 安装程序，只需点击几下即可使用创意工具。",
-                feature_3_title: "游戏就绪",
-                feature_3_text: "预装 Steam、gamescope 和 gamemode，可显著提升您的游戏性能。",
-                showcase_title: "精美打造的桌面",
-                showcase_subtitle: "界面强大且令人愉悦。",
-                more_showcase_title: "改变你的风格！",
-                style_btn_linexin: "Linexin 桌面",
-                style_btn_kinexin: "Kinexin 桌面",
-                kinexin_style_1: "Kinexin",
-                kinexin_style_2: "Win10 风格",
-                kinexin_style_3: "Win11 风格",
-                kinexin_style_4: "2worlds",
-                faq_title: "常见问题解答",
-                faq_q1: "什么是 Linexin OS？",
-                faq_a1: "Linexin 是基于 Arch Linux 的发行版。它旨在成为一个快速且用户友好的操作系统，专为创意工作和游戏预配置。",
-                faq_q2: "Linexin 适合谁？",
-                faq_a2: "Linexin 非常适合需要 Affinity 和 DaVinci Resolve 等工具的内容创作者、寻求优化体验的游戏玩家，以及任何想要美观高效 Arch 系统的人。",
-                faq_q3: "Linexin 是免费的吗？",
-                faq_a3: "是的，永远免费。Linexin 是一个免费的开源项目 (GNU GPL v3)。",
-                faq_q4: "它使用什么桌面环境？",
-                faq_a4: "Linexin 默认使用精美定制的 GNOME 环境。<br><br> 不过，您可以在安装过程中选择精心制作的自定义 KDE Plasma 环境。",
-                faq_q5: "Linexin 是不可变系统吗？",
-                faq_a5: "不，它不是不可变的。但它提供最小化的系统包。建议普通用户使用 Flatpaks，而高级用户可以使用 pacman 和 AUR。",
-                community_title: "开源项目",
-                community_subtitle: "Linexin 构建于完全开源的代码之上。欢迎在 GitHub 上 Fork、修改或贡献。",
-                community_button: "访问 GitHub",
-                footer_copy: "© 2025-2026 Linexin 项目",
-                footer_love: "用 ❤️ 为开源社区设计。"
-            },
-            hi: {
-                logo_alt: "Linexin लोगो",
-                nav_features: "विशेषताएँ",
-                nav_showcase: "प्रदर्शनी",
-                nav_faq: "सामान्य प्रश्न",
-                nav_github: "GitHub",
-                nav_download: "डाउनलोड",
-                hero_badge: "v2.1 अब उपलब्ध है",
-                hero_title: "अनुभव करें <br> <span class=\"text-gradient\">कंप्यूटिंग की आज़ादी</span>",
-                hero_subtitle: "एक हल्का लिनक्स वितरण जो शक्तिशाली प्रदर्शन के साथ सुंदरता को जोड़ता है। पूर्व-कॉन्फ़िगर किए गए Arch-आधारित (btw) डिस्ट्रो का उपयोग करें जो उपयोग के लिए तैयार है, अपने पसंदीदा गेम खेलें और Affinity सूट या DaVinci Resolve जैसे रचनात्मक टूल आसानी से इंस्टॉल करें।",
-                hero_button_download: "अभी डाउनलोड करें",
-                hero_button_learn: "और जानें",
-                features_title: "Linexin क्यों चुनें?",
-                features_subtitle: "जो आपको चाहिए, वही मिलेगा।",
-                feature_1_title: "बेहद तेज़",
-                feature_1_text: "न्यूनतम आधार पर निर्मित, Linexin को गति और प्रतिक्रिया के लिए अनुकूलित किया गया है, जो सेकंड में बूट होता है।",
-                feature_2_title: "रचनात्मक कार्य",
-                feature_2_text: "बिल्ट-इन Affinity और DaVinci इंस्टॉलर के साथ, आप कुछ ही क्लिक के बाद रचनात्मक टूल का उपयोग कर सकते हैं।",
-                feature_3_title: "गेमिंग के लिए तैयार",
-                feature_3_text: "Steam, gamescope और gamemode के साथ पहले से पैक किया गया है जो आपके गेमिंग प्रदर्शन को बढ़ा सकता है।",
-                showcase_title: "सुंदरता से तैयार डेस्कटॉप",
-                showcase_subtitle: "एक इंटरफ़ेस जो शक्तिशाली होने के साथ-साथ उपयोग में भी सुखद है।",
-                more_showcase_title: "अपनी शैली बदलें!",
-                style_btn_linexin: "Linexin डेस्कटॉप",
-                style_btn_kinexin: "Kinexin डेस्कटॉप",
-                kinexin_style_1: "Kinexin",
-                kinexin_style_2: "10-शैली",
-                kinexin_style_3: "11-शैली",
-                kinexin_style_4: "2worlds",
-                faq_title: "अक्सर पूछे जाने वाले प्रश्न",
-                faq_q1: "Linexin OS क्या है?",
-                faq_a1: "Linexin Arch Linux पर आधारित एक लिनक्स वितरण है। इसे एक तेज़ और उपयोगकर्ता के अनुकूल ऑपरेटिंग सिस्टम के रूप में डिज़ाइन किया गया है।",
-                faq_q2: "Linexin किसके लिए है?",
-                faq_a2: "Linexin उन सामग्री निर्माताओं के लिए आदर्श है जिन्हें Affinity और DaVinci Resolve जैसे टूल की आवश्यकता है, और गेमर्स जो अनुकूलित अनुभव चाहते हैं।",
-                faq_q3: "क्या Linexin मुफ़्त है?",
-                faq_a3: "हाँ और हमेशा रहेगा। Linexin एक मुफ़्त और ओपन-सोर्स प्रोजेक्ट है (GNU GPL v3)।",
-                faq_q4: "यह किस डेस्कटॉप वातावरण का उपयोग करता है?",
-                faq_a4: "Linexin डिफ़ॉल्ट रूप से एक अनुकूलित GNOME वातावरण का उपयोग करता है। <br><br> हालाँकि, आप स्थापना के दौरान एक कस्टम KDE Plasma वातावरण चुन सकते हैं।",
-                faq_q5: "क्या Linexin अपरिवर्तनीय (immutable) है?",
-                faq_a5: "नहीं। हालाँकि, यह न्यूनतम सिस्टम पैकेज के साथ आता है। औसत उपयोगकर्ताओं को Flatpaks का उपयोग करने की सलाह दी जाती है, जबकि पावर उपयोगकर्ता pacman और AUR का उपयोग कर सकते हैं।",
-                community_title: "ओपन-सोर्स प्रोजेक्ट",
-                community_subtitle: "Linexin पूरी तरह से ओपन-सोर्स कोड के साथ बनाया गया है। GitHub पर योगदान करें।",
-                community_button: "GitHub पर जाएँ",
-                footer_copy: "© 2025-2026 Linexin प्रोजेक्ट",
-                footer_love: "ओपन-सोर्स समुदाय के लिए ❤️ के साथ डिज़ाइन किया गया।"
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Loading Overlay
-            const loadingOverlay = document.getElementById('loading-overlay');
-            setTimeout(() => {
-                loadingOverlay.style.opacity = '0';
-                setTimeout(() => loadingOverlay.style.display = 'none', 500);
-            }, 800);
-
-            // Navbar Scroll Effect
-            const navbarContainer = document.getElementById('navbar-container');
-
-            const handleScroll = () => {
-                if (window.scrollY > 20) {
-                    navbarContainer.classList.remove('w-full', 'max-w-full', 'rounded-none', 'mt-0', 'border-b', 'bg-[#0f0518]/80');
-                    navbarContainer.classList.add('w-[90%]', 'max-w-6xl', 'rounded-full', 'mt-6', 'border', 'glass-panel');
-                } else {
-                    navbarContainer.classList.add('w-full', 'max-w-full', 'rounded-none', 'mt-0', 'border-b', 'bg-[#0f0518]/80');
-                    navbarContainer.classList.remove('w-[90%]', 'max-w-6xl', 'rounded-full', 'mt-6', 'border', 'glass-panel');
-                }
-            };
-
-            window.addEventListener('scroll', handleScroll);
-            handleScroll();
-
-            // Reveal Animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('active');
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-            // Mobile Menu
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-            });
-
-            // Showcase Slider
-            const showcaseImage = document.getElementById('showcase-image');
-            const prevButton = document.getElementById('prev-button');
-            const nextButton = document.getElementById('next-button');
-            const images = [
-                'https://i.ibb.co/HfbF33sy/gfgfgf.png',
-                'https://i.ibb.co/2Ypp3QYw/Screenshot-20260122-1407382.png',
-                'https://i.ibb.co/6cynj74Y/Screenshot-From-2025-07-27-20-06-24.png',
-                'https://i.ibb.co/ycgKyB3t/Screenshot-20260122-175405.png'
-            ];
-
-            // Preload images
-            images.forEach(src => {
-                const img = new Image();
-                img.src = src;
-            });
-            let imgIndex = 0;
-            const updateImage = () => {
-                showcaseImage.style.opacity = '0';
-                setTimeout(() => {
-                    showcaseImage.src = images[imgIndex];
-                    showcaseImage.style.opacity = '1';
-                }, 300);
-            };
-            if (prevButton && nextButton) {
-                prevButton.addEventListener('click', () => { imgIndex = (imgIndex - 1 + images.length) % images.length; updateImage(); });
-                nextButton.addEventListener('click', () => { imgIndex = (imgIndex + 1) % images.length; updateImage(); });
-            }
-            updateImage();
-
-            // Style Switcher
-            const btnLinexin = document.getElementById('btn-linexin');
-            const btnKinexin = document.getElementById('btn-kinexin');
-            const sliderBg = document.getElementById('slider-bg');
-            const gridLinexin = document.getElementById('grid-linexin');
-            const gridKinexin = document.getElementById('grid-kinexin');
-
-            if (btnLinexin && btnKinexin) {
-                btnLinexin.addEventListener('click', () => {
-                    sliderBg.style.transform = 'translateX(0)';
-                    btnLinexin.classList.add('segment-active'); btnLinexin.classList.remove('segment-inactive');
-                    btnKinexin.classList.remove('segment-active'); btnKinexin.classList.add('segment-inactive');
-                    gridLinexin.classList.remove('hidden'); gridLinexin.style.opacity = '0';
-                    setTimeout(() => gridLinexin.style.opacity = '1', 50);
-                    gridKinexin.classList.add('hidden');
-                });
-                btnKinexin.addEventListener('click', () => {
-                    sliderBg.style.transform = 'translateX(100%) translateX(8px)';
-                    btnKinexin.classList.add('segment-active'); btnKinexin.classList.remove('segment-inactive');
-                    btnLinexin.classList.remove('segment-active'); btnLinexin.classList.add('segment-inactive');
-                    gridKinexin.classList.remove('hidden'); gridKinexin.style.opacity = '0';
-                    setTimeout(() => gridKinexin.style.opacity = '1', 50);
-                    gridLinexin.classList.add('hidden');
-                });
-            }
-
-            // --- UPDATED: Animated FAQ Accordion ---
-            document.querySelectorAll('.faq-question').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const content = btn.nextElementSibling;
-                    const arrow = btn.querySelector('.faq-arrow');
-                    const isOpen = content.classList.contains('open');
-
-                    // Close all other open answers
-                    document.querySelectorAll('.faq-answer').forEach(el => {
-                        el.style.maxHeight = null; // Collapses the element
-                        el.classList.remove('open');
-                    });
-                    document.querySelectorAll('.faq-arrow').forEach(el => {
-                        el.style.transform = 'rotate(0deg)';
-                    });
-
-                    // If the clicked one wasn't already open, open it
-                    if (!isOpen) {
-                        content.classList.add('open');
-                        // Set max-height to the scrollHeight to allow smooth CSS transition
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        arrow.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-
-            // Language Handling
-            const setLang = (lang) => {
-                if (!translations[lang]) lang = 'en';
-                const t = translations[lang];
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.getAttribute('data-translate-key');
-                    if (t[key]) {
-                        if (el.getAttribute('data-translate-type') === 'alt') el.alt = t[key];
-                        else el.innerHTML = t[key];
-                    }
-                });
-                document.getElementById('current-lang-desktop').innerText = lang.toUpperCase();
-            };
-            document.querySelectorAll('[data-lang]').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    setLang(e.target.dataset.lang);
-                });
-            });
-            setLang('en');
-
-            // 3D Tilt Effect
-            const tiltCards = document.querySelectorAll('.tilt-card');
-            tiltCards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const rotateX = ((y - centerY) / centerY) * -10;
-                    const rotateY = ((x - centerX) / centerX) * 10;
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-                    card.style.transition = 'transform 0.5s ease-out';
-                });
-                card.addEventListener('mouseenter', () => {
-                    card.style.transition = 'transform 0.1s ease-out';
-                });
-            });
-
-            // Parallax Background
-            const auroraBlobs = document.querySelectorAll('.aurora-blob');
-            window.addEventListener('scroll', () => {
-                const scrolled = window.scrollY;
-                auroraBlobs.forEach((blob, index) => {
-                    const speed = index === 0 ? 0.2 : -0.15;
-                    blob.style.transform = `translateY(${scrolled * speed}px)`;
-                });
-            });
-        });
-    </script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

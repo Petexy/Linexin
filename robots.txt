@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://raw.githubusercontent.com/Petexy/Linexin/refs/heads/main/sitemap.xml
+Sitemap: https://petexy.github.io/Linexin/sitemap.xml

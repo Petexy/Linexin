@@ -1,5 +1,19 @@
 exclude:
   - airootfs/
+  - efiboot/
+  - grub/
+  - gpg/
+  - repo-local/
+  - syslinux/
   - Gemfile
   - Gemfile.lock
   - README.md
+  - changelog_v1.1.md
+  - changelog_v2.0.md
+  - changelog_v2.1.md
+  - profiledef.sh
+  - pacman.conf
+  - bootstrap_packages.x86_64
+  - packages.x86_64
+  - checksum
+  - "*.xcf"
